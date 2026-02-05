@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="description" content="Blog article — William Tang's personal website">
+    <meta name="keywords" content="William Tang, blog, article, personal website">
+    <meta name="author" content="William Tang">
+
+    <title>William Tang - Blog #1</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.JPG" type="image/jpeg">
+
+    <!-- = CSS = -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/theme-color/color_1.css" rel="stylesheet">
+
+    <!-- = jQuery = -->
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
+<!-- HEADER (same markup as blog.html, ‘Blog’ stays active) -->
+<header class="navbar custom-navbar navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="logo">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <a class="theme-color" href="index.html">William</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <nav class="main-menu">
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="smooth-scroll" href="index.html#home">Home</a></li>
+                            <li><a class="smooth-scroll" href="index.html#about">About</a></li>
+                            <li><a class="smooth-scroll" href="index.html#services">Service</a></li>
+                            <li><a class="smooth-scroll" href="index.html#work">Work</a></li>
+                            <li><a class="smooth-scroll" href="index.html#contact">Contact</a></li>
+                            <li class="active"><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcroumb-area" style="background-image:url(assets/img/blog-bg.jpg);" data-stellar-background-ratio="0.6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Blog #1</h1>
+                <div class="breadcroumb">
+                    <a href="index.html">Home</a> &gt;
+                    <a href="blog.html">Blog</a> &gt;
+                    <span class="current active">Blog #1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SINGLE POST -->
+<div class="single-blog-area section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Main article -->
+            <div class="col-md-8">
+                <div class="single-post-details wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="post-featured-content">
+                        <img src="assets/img/blog/01.jpg" class="img-responsive" alt="">
+                    </div>
+                    <h2>Blog #1: How to create your own website</h2>
+                    <div class="post-meta">
+                        <span><i class="fa fa-user"></i> Posted by William</span>
+                        <span><i class="fa fa-calendar"></i> 22 August 2025</span>
+                    </div>
+                    <div class="entry-content">
+                        <p>
+                        See, normally I would write a long introduction here, but I think it's better to just get straight to the point. So, let's get started with the steps to create your own website.
+                        </p>
+                        <ol>
+                            <li>Take CS50.</li>
+                            <li>Do the final project.</li>
+                            <li>Voila.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Comments section (unchanged) -->
+                <!-- … -->
+            </div>
+
+            <!-- Sidebar (same widgets as blog.html) -->
+            <div class="col-md-4">
+                <!-- widgets … -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row wow zoomIn" data-wow-delay="0.4s">
+            <div class="col-md-12 text-center">
+                <p>&copy;2025 <strong>William Tang</strong>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JS (same stack) -->
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/typed.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
+<script>jQuery(function($){ if(!/Mobi/.test(navigator.userAgent)){ $.stellar({horizontalScrolling:false}); } });</script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/validator.min.js"></script>
+<script src="assets/js/jquery.mixitup.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
