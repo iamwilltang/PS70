@@ -61,7 +61,7 @@
         var element = $(".element");
         $(function() {
             element.typed({
-                strings: ["Student.", "Thinker.", "Leader."],
+                strings: ["Carpe Diem.", "Ad Astra Per Aspera.", "Ad Meliora."],
                 typeSpeed: 100,
                 loop: true,
             });
