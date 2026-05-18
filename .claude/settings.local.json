@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_sender/mvp_sender.ino\" mvp_sender.ino)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_receiver/mvp_receiver.ino\" mvp_receiver.ino)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_board_addresses/mvp_board_addresses.ino\" mvp_board_addresses.ino)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_motor_test/mvp_motor_test.ino\" mvp_motor_test.ino)",
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 07_outputs/)"
+    ]
+  }
+}
