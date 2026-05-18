@@ -157,15 +157,15 @@ code {
 
 /* Multi-line code blocks (the ```...``` dumps) */
 pre {
-  background-color: #1e2330;
-  color: #e8edf3;
+  background-color: #f4f7fb;
+  color: #1a1a1a;
   font-family: Consolas, Monaco, "Courier New", monospace;
   font-size: 15px;
   line-height: 1.55;
   padding: 18px 22px;
   border-radius: 8px;
-  border: 1px solid #2a3142;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  border: 1px solid #cfdce8;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
   overflow-x: auto;
   margin: 24px 0;
   white-space: pre;

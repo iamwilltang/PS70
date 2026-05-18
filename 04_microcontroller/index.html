@@ -113,9 +113,8 @@ There's also a 1-second watchdog: if no packet arrives for that long (sender die
 
 <p class = "margin"></p>
 
-```cpp
-#include <esp_now.h>
-#include <WiFi.h>
+<pre><code class="lang-cpp">#include &lt;esp_now.h&gt;
+#include &lt;WiFi.h&gt;
 
 uint8_t peerAddress[] = {0x58, 0x8C, 0x81, 0x9F, 0xBA, 0xA8};
 
@@ -137,12 +136,12 @@ void setup() {
     return;
   }
 
-  memset(&peerInfo, 0, sizeof(peerInfo));
+  memset(&amp;peerInfo, 0, sizeof(peerInfo));
   memcpy(peerInfo.peer_addr, peerAddress, 6);
   peerInfo.channel = 0;
   peerInfo.encrypt = false;
 
-  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
+  if (esp_now_add_peer(&amp;peerInfo) != ESP_OK) {
     Serial.println("Failed to add peer");
     return;
   }
@@ -152,12 +151,12 @@ void setup() {
 
 void loop() {
   msg.packet_id++;
-  esp_now_send(peerAddress, (uint8_t *)&msg, sizeof(msg));
+  esp_now_send(peerAddress, (uint8_t *)&amp;msg, sizeof(msg));
   Serial.print("Sent packet ");
   Serial.println(msg.packet_id);
   delay(200);  // 5 Hz
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -169,9 +168,8 @@ void loop() {
 
 <p class = "margin"></p>
 
-```cpp
-#include <esp_now.h>
-#include <WiFi.h>
+<pre><code class="lang-cpp">#include &lt;esp_now.h&gt;
+#include &lt;WiFi.h&gt;
 
 const int motorPin = D1;   // gate-control pin for the P-MOSFET (needs external pull-up to VCC)
 
@@ -203,13 +201,13 @@ float avgRSSI() {
   int count = bufferFilled ? WINDOW : rssiIndex;
   if (count == 0) return -100.0;
   long sum = 0;
-  for (int i = 0; i < count; i++) sum += rssiBuffer[i];
+  for (int i = 0; i &lt; count; i++) sum += rssiBuffer[i];
   return (float)sum / count;
 }
 
 const char* classify(float rssi) {
-  if (rssi > -55) return "NEAR";
-  if (rssi > -70) return "MID";
+  if (rssi &gt; -55) return "NEAR";
+  if (rssi &gt; -70) return "MID";
   return "FAR";
 }
 
@@ -230,20 +228,20 @@ void onReceive(const esp_now_recv_info *info, const uint8_t *incomingData, int l
     return;
   }
 
-  memcpy(&incomingMsg, incomingData, sizeof(incomingMsg));
+  memcpy(&amp;incomingMsg, incomingData, sizeof(incomingMsg));
   lastPacketMillis = millis();
 
-  int rssi = info->rx_ctrl->rssi;
+  int rssi = info-&gt;rx_ctrl-&gt;rssi;
   rssiBuffer[rssiIndex++] = rssi;
-  if (rssiIndex >= WINDOW) {
+  if (rssiIndex &gt;= WINDOW) {
     rssiIndex = 0;
     bufferFilled = true;
   }
 
   float avg = avgRSSI();
 
-  if (!motorOn && avg < RSSI_FAR_ON)        setMotor(true);
-  else if (motorOn && avg > RSSI_FAR_OFF)   setMotor(false);
+  if (!motorOn &amp;&amp; avg &lt; RSSI_FAR_ON)        setMotor(true);
+  else if (motorOn &amp;&amp; avg &gt; RSSI_FAR_OFF)   setMotor(false);
 
   Serial.print("id=");
   Serial.print(incomingMsg.packet_id);
@@ -274,13 +272,13 @@ void setup() {
 }
 
 void loop() {
-  if (motorOn && (millis() - lastPacketMillis > PACKET_TIMEOUT_MS)) {
+  if (motorOn &amp;&amp; (millis() - lastPacketMillis &gt; PACKET_TIMEOUT_MS)) {
     setMotor(false);
     Serial.println("Watchdog: no packets, motor OFF");
   }
   delay(50);
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 

@@ -105,8 +105,7 @@ Summing 100 samples knocks down random noise by ~10× (square-root-of-N averagin
 
 <p class = "margin"></p>
 
-```cpp
-long result;   //variable for the result of the tx_rx measurement.
+<pre><code class="lang-cpp">long result;   //variable for the result of the tx_rx measurement.
 int analog_pin = D0;
 int tx_pin = D1;
 
@@ -132,7 +131,7 @@ long tx_rx(){         // Function to execute rx_tx algorithm and return a value
 
   sum = 0;
 
-  for (int i = 0; i < N_samples; i++){
+  for (int i = 0; i &lt; N_samples; i++){
    digitalWrite(tx_pin,HIGH);              // Step the voltage high on conductor 1.
    read_high = analogRead(analog_pin);     // Measure response of conductor 2.
    delayMicroseconds(100);                 // Delay to reach steady state.
@@ -143,7 +142,7 @@ long tx_rx(){         // Function to execute rx_tx algorithm and return a value
  }
   return sum;
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 

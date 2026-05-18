@@ -193,8 +193,7 @@ Per-packet RSSI is noisy — multipath, antenna orientation, and people walking 
 
 <p class = "margin"></p>
 
-```cpp
-const int AVG_WINDOW = 10;
+<pre><code class="lang-cpp">const int AVG_WINDOW = 10;
 int rssiBuf[AVG_WINDOW];
 int rssiIdx = 0;
 bool rssiFilled = false;
@@ -203,10 +202,10 @@ float currentAvgRSSI() {
   int n = rssiFilled ? AVG_WINDOW : rssiIdx;
   if (n == 0) return -100.0f;
   long s = 0;
-  for (int i = 0; i < n; i++) s += rssiBuf[i];
+  for (int i = 0; i &lt; n; i++) s += rssiBuf[i];
   return (float)s / n;
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -233,11 +232,10 @@ Here is the decision block from the main loop, verbatim:
 
 <p class = "margin"></p>
 
-```cpp
-float delta = avg - lastDecisionRSSI;
+<pre><code class="lang-cpp">float delta = avg - lastDecisionRSSI;
 
 DriveMode nextMode = driveMode;
-if (delta > RSSI_IMPROVE_THRESHOLD) {
+if (delta &gt; RSSI_IMPROVE_THRESHOLD) {
   if (driveMode != STRAIGHT_MODE) lastGoodCurve = driveMode;
   consecutiveBadInCurve = 0;
   nextMode = STRAIGHT_MODE;
@@ -246,14 +244,14 @@ if (delta > RSSI_IMPROVE_THRESHOLD) {
   consecutiveBadInCurve = 1;
 } else {
   consecutiveBadInCurve++;
-  if (consecutiveBadInCurve >= FLIP_THRESHOLD) {
+  if (consecutiveBadInCurve &gt;= FLIP_THRESHOLD) {
     nextMode = (driveMode == CURVE_LEFT_MODE)
                ? CURVE_RIGHT_MODE
                : CURVE_LEFT_MODE;
     consecutiveBadInCurve = 1;
   }
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -269,23 +267,22 @@ The way that works without dropping radio packets is a non-blocking step-pulse g
 
 <p class = "margin"></p>
 
-```cpp
-void motorsTick() {
+<pre><code class="lang-cpp">void motorsTick() {
   if (!motorsRunning) return;
   unsigned long now = micros();
 
-  if (leftStepDir != 0 && now - lastLeftStepMicros >= leftStepPeriodUs) {
+  if (leftStepDir != 0 &amp;&amp; now - lastLeftStepMicros &gt;= leftStepPeriodUs) {
     leftStepIdx = (leftStepIdx + leftStepDir + SEQ_LEN) % SEQ_LEN;
     writePins(LEFT_IN, leftStepIdx);
     lastLeftStepMicros = now;
   }
-  if (rightStepDir != 0 && now - lastRightStepMicros >= rightStepPeriodUs) {
+  if (rightStepDir != 0 &amp;&amp; now - lastRightStepMicros &gt;= rightStepPeriodUs) {
     rightStepIdx = (rightStepIdx + rightStepDir + SEQ_LEN) % SEQ_LEN;
     writePins(RIGHT_IN, rightStepIdx);
     lastRightStepMicros = now;
   }
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -307,19 +304,18 @@ Every robot sends its beacon to the broadcast address (<code>FF:FF:FF:FF:FF:FF</
 
 <p class = "margin"></p>
 
-```cpp
-void onReceive(const esp_now_recv_info *info, const uint8_t *data, int len) {
+<pre><code class="lang-cpp">void onReceive(const esp_now_recv_info *info, const uint8_t *data, int len) {
   if (len != sizeof(incomingMsg)) return;
-  if (memcmp(info->src_addr, TARGET_MAC, 6) != 0) return;   // ← the filter
+  if (memcmp(info-&gt;src_addr, TARGET_MAC, 6) != 0) return;   // ← the filter
 
-  memcpy(&incomingMsg, data, sizeof(incomingMsg));
+  memcpy(&amp;incomingMsg, data, sizeof(incomingMsg));
   lastPacketMillis = millis();
 
-  int rssi = info->rx_ctrl->rssi;
+  int rssi = info-&gt;rx_ctrl-&gt;rssi;
   rssiBuf[rssiIdx++] = rssi;
-  if (rssiIdx >= AVG_WINDOW) { rssiIdx = 0; rssiFilled = true; }
+  if (rssiIdx &gt;= AVG_WINDOW) { rssiIdx = 0; rssiFilled = true; }
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -353,15 +349,14 @@ If no target packet arrives for 1 second (target died, target rebooted, target m
 
 <p class = "margin"></p>
 
-```cpp
-if (millis() - lastPacketMillis > PACKET_TIMEOUT_MS) {
+<pre><code class="lang-cpp">if (millis() - lastPacketMillis &gt; PACKET_TIMEOUT_MS) {
   if (phase != IDLE) {
     Serial.println("Watchdog: signal lost, IDLE");
     enterIDLE();
   }
   return;
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
@@ -377,8 +372,7 @@ The entire difference between <code>mvp_robotA.ino</code>, <code>mvp_robotB.ino<
 
 <p class = "margin"></p>
 
-```cpp
-// Robot A (MAC 58:8C:81:A0:2F:1C) chases B:
+<pre><code class="lang-cpp">// Robot A (MAC 58:8C:81:A0:2F:1C) chases B:
 uint8_t TARGET_MAC[6]    = {0x58, 0x8C, 0x81, 0x9F, 0xBA, 0xA8};
 DriveMode INITIAL_CURVE  = CURVE_LEFT_MODE;
 
@@ -389,7 +383,7 @@ DriveMode INITIAL_CURVE  = CURVE_RIGHT_MODE;
 // Robot C (MAC 58:8C:81:9D:2A:D4) chases A:
 uint8_t TARGET_MAC[6]    = {0x58, 0x8C, 0x81, 0xA0, 0x2F, 0x1C};
 DriveMode INITIAL_CURVE  = CURVE_LEFT_MODE;
-```
+</code></pre>
 
 <p class = "margin"></p>
 

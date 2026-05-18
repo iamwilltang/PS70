@@ -80,8 +80,7 @@ Alongside the MVP I was prototyping the drive electronics for the robot I planne
 
 <p class = "margin"></p>
 
-```cpp
-// L9110 wiring + direction smoke test. No ESP-NOW, no RSSI — just cycles
+<pre><code class="lang-cpp">// L9110 wiring + direction smoke test. No ESP-NOW, no RSSI — just cycles
 // STOP → FORWARD → STOP → SPIN → STOP so you can confirm each command
 // does what it claims before flashing the full follower.
 //
@@ -153,7 +152,7 @@ void loop() {
   motorsSpin();
   delay(3000);
 }
-```
+</code></pre>
 
 <p class = "margin"></p>
 
