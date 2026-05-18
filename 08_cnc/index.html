@@ -21,11 +21,155 @@
 <body>
 <xmp style="display:none;">
 <div class="textcontainer">
-<p class="margin">   </p>
+<br></br>
+
 
 <h3>Week 8: CNC Milling</h3>
 
-<h4>Assignment: Make Something With CNC</h4>
+<p class = "margin"></p>
+
+The assignment was to make something on the CNC mill. The whole pipeline I went for: take a 2D drawing → CNC it as a relief into pink rigid foam → vacuum-form a thin plastic sheet over the foam to make a one-sided mold → pour plaster into the mold → pop out a finished plaster cast. Four totally different machines/processes in a row, and the whole thing falls apart if any one of them is off — which it absolutely was.
+
+<p class = "margin"></p>
+
+
+<h4>Team warmup: the goldfish</h4>
+<p class = "margin"></p>
+
+Before doing my own piece I did a group warmup with my Week-6 team (Matthew, Alice, Aurora, me — Group 4). We modeled a goldfish in Fusion 360 and ran it on the Shopbot together as a way to learn the toolpath setup without anyone solo-piloting on their own design.
+
+<p class = "margin"></p>
+
+<a href="group4-goldfish.f3d" download>Group4Goldfish.f3d</a> (Fusion 360 source)
+
+<p class = "margin"></p>
+
+
+<h4>My piece: the cat</h4>
+<p class = "margin"></p>
+
+
+<h5>The artwork</h5>
+<p class = "margin"></p>
+
+I started from a clean cute-cat line drawing — big eyes, sitting pose, all single-stroke outlines that translate well to CNC-relief carving. I traced it into an SVG so the CNC could read it as toolpaths.
+
+<p class = "margin"></p>
+
+<img src="cute-cat.jpg" alt="Source cute cat line drawing" width="300">
+
+<p class = "margin"></p>
+
+<a href="cute-cat.svg" download>cute-cat.svg</a>
+
+<p class = "margin"></p>
+
+
+<h5>CNC milling the foam</h5>
+<p class = "margin"></p>
+
+Machine: Shopbot. Stock: pink rigid foam insulation (the dense kind, not the crumbly white EPS). Bit: 1/8" flat endmill — small enough to resolve the eye details, big enough to clear the wider regions without taking forever.
+
+<p class = "margin"></p>
+
+I ran it as a relief: the design pockets <i>down into</i> the foam so the cat's features stand proud, ready to receive a vacuum-formed mold on top.
+
+<p class = "margin"></p>
+
+<img src="cat-foam-standing.jpg" alt="CNC'd pink foam cat with all features visible" width="350">
+
+<p class = "margin"></p>
+
+The result came out clean — every feature crisp, the foam's surface texture visible but tidy, ears and whiskers all intact.
+
+<p class = "margin"></p>
+
+
+<h5>Attempt 1: big cat → vacuum forming fails</h5>
+<p class = "margin"></p>
+
+The plan was to vacuum-form a thin clear plastic sheet over the foam cat, then use that plastic shell as a mold to pour plaster into. The class ran out of thin clear plastic, so I ended up using a thicker PLA sheet instead.
+
+<p class = "margin"></p>
+
+Two problems hit at once:
+
+<ul>
+  <li>The big cat was too tall for the vacuum former's draw — the plastic sheet didn't have enough stretch left to wrap all the way around the contours.</li>
+  <li>The thicker PLA sheet stuck to the foam during cool-down, so even the partial wrap didn't release cleanly.</li>
+</ul>
+
+<p class = "margin"></p>
+
+
+<h5>Attempt 2: small cat</h5>
+<p class = "margin"></p>
+
+I re-ran the CNC at a smaller scale that fit the vacuum former's working envelope. The smaller cat formed up much better — the PLA shell wrapped most of the contours this time.
+
+<p class = "margin"></p>
+
+<img src="cats-both-sizes.jpg" alt="Both cats side by side after the full process" width="500">
+
+<p class = "margin"></p>
+
+(That photo is jumping ahead — both are the final plaster casts. The small one is on the right.)
+
+<p class = "margin"></p>
+
+
+<h5>Demolding the foam from the plastic</h5>
+<p class = "margin"></p>
+
+Foam doesn't like releasing from PLA at all. When I peeled the vacuum-formed shell off the small cat, chunks of pink foam tore off the model and stayed glued to the inside of the mold. You can see the residue in the negative mold here:
+
+<p class = "margin"></p>
+
+<img src="cat-after-demold.jpg" alt="Vacuum-formed mold cavity after removing the foam cat, with pink foam residue stuck inside" width="350">
+
+<p class = "margin"></p>
+
+Working theory: the rigid foam compresses just enough during vacuum forming for the PLA to grab into surface pores, and once it cools you've effectively got a mechanical lock between two materials with no draft. A release agent (mold release spray, or even just a thin oil coat) on the foam before vacuum forming would probably fix this — none was used here.
+
+<p class = "margin"></p>
+
+
+<h5>Plaster casting</h5>
+<p class = "margin"></p>
+
+With both molds (the partially-wrapped big one and the smaller, better-wrapped one) I mixed up some blue plaster and poured each one to see what came out.
+
+<p class = "margin"></p>
+
+The big-cat mold filled up with plaster but the cast was basically just a rough outline shape — the mold was too shallow to capture the eyes, mouth, ear interiors, and whiskers. The small-cat mold did capture more of the silhouette, but the plaster cast was completely seized inside the mold; I ended up destroying the mold to get the casting out.
+
+<p class = "margin"></p>
+
+<img src="cats-both-sizes.jpg" alt="Both finished blue plaster cats" width="500">
+
+<p class = "margin"></p>
+
+Both casts ended up as low-detail outlines of the cat rather than the crisp-featured pieces I was hoping for. The hand of the foam original was preserved as a silhouette, and that's about it.
+
+<p class = "margin"></p>
+
+
+<h4>What I'd change if I did this again</h4>
+<p class = "margin"></p>
+
+<ul>
+  <li><b>Hit the vacuum former's working envelope on the first try.</b> Measure the maximum draw depth of the machine and scale the CNC pattern accordingly <i>before</i> running the foam.</li>
+  <li><b>Use the thin clear plastic, not thicker PLA.</b> Thinner = more stretch = wraps tighter to fine features. PLA was a stopgap that hurt the wrap quality and the demold both.</li>
+  <li><b>Spray release agent on the foam before vacuum forming.</b> Would have saved both the mold and the foam original.</li>
+  <li><b>Don't pour plaster into a one-piece negative mold without a draft.</b> Either build the mold in two halves with a parting line so demold doesn't require destroying the mold, or use a flexible silicone mold over the foam instead of a rigid PLA shell.</li>
+</ul>
+
+<p class = "margin"></p>
+
+A useful failure overall — the cat survived as a pink foam original, even if the casts didn't.
+
+<p class = "margin"></p>
+
 
 </div>
 </xmp>

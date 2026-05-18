@@ -7,7 +7,12 @@
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_motor_test/mvp_motor_test.ino\" mvp_motor_test.ino)",
       "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 07_outputs/)",
       "WebFetch(domain:matthewchang0.github.io)",
-      "WebFetch(domain:dragoncat5482.github.io)"
+      "WebFetch(domain:dragoncat5482.github.io)",
+      "Bash(python -c 'import pillow_heif; pillow_heif.register_heif_opener\\(\\); from PIL import Image; import os *)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.svg\" cute-cat.svg)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.jpg\" cute-cat.jpg)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/Group4Goldfish.f3d\" group4-goldfish.f3d)",
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 08_cnc/)"
     ]
   }
 }
