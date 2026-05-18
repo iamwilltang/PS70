@@ -21,14 +21,264 @@
 <body>
 <xmp style="display:none;">
 <div class="textcontainer">
-<p class="margin">   </p>
+<br></br>
+
 
 <h3>Week 4: Microcontroller Programming</h3>
 
-<h4>[Do Something with an arduino]</h4>
+<p class = "margin"></p>
+
+This was the first real slice of my final project. I got two XIAO ESP32-C3 boards talking to each other over ESP-NOW, and the receiver decides — based on how strong the radio signal coming in is — whether to switch a DC motor on or off through a MOSFET. That's the whole core idea of my final-project swarm: each robot listens for its neighbor's broadcasts, reads the RSSI, and chases when the signal is weak (neighbor is far) or stops when the signal is strong (neighbor is close). This week I just proved the loop works on a bench setup before scaling it to three robots.
+
+<p class = "margin"></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mKhFjES_JMM" title="Two XIAOs communicating over ESP-NOW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p class = "margin"></p>
 
 
+<h4>The setup</h4>
+<p class = "margin"></p>
 
+Two boards on the bench:
+<ul>
+  <li><b>Sender</b> — XIAO ESP32-C3, MAC <code>58:8C:81:9D:2A:D4</code>. Just broadcasts a tiny ESP-NOW packet (one <code>uint32_t</code> counter) every 200 ms at 5 Hz. No sensors, no logic — it's a heartbeat.</li>
+  <li><b>Receiver</b> — XIAO ESP32-C3, MAC <code>58:8C:81:9F:BA:A8</code>. Receives the packets, pulls the RSSI off each one, smooths it, and uses the smoothed value to switch a DC motor on or off through a P-channel MOSFET.</li>
+</ul>
+
+<p class = "margin"></p>
+
+The MAC addresses are hard-coded into the sender (the receiver's MAC is the destination), which is fine for two boards but doesn't scale — the final-project robots all need to know each other's MACs, and that ends up being a constants block at the top of the sketch.
+
+<p class = "margin"></p>
+
+
+<h4>Why ESP-NOW (not WiFi)</h4>
+<p class = "margin"></p>
+
+ESP-NOW is a peer-to-peer protocol built into the ESP32 radio. No router, no SSID, no IP stack — both boards come up in <code>WIFI_STA</code> mode, register each other as peers by MAC address, and start exchanging frames directly. Latency is tiny (sub-ms) and the receive callback gives you the per-packet RSSI for free, which is what I actually care about. For a swarm of robots that have to find each other anywhere there's no router, this is exactly the right tool.
+
+<p class = "margin"></p>
+
+
+<h4>The MOSFET switching trick</h4>
+<p class = "margin"></p>
+
+The motor is switched by a P-channel MOSFET on the high side, with an external pull-up resistor between gate and VCC. That gives you a really clean state machine controllable from one XIAO pin:
+
+<ul>
+  <li><b>Pin driven LOW</b> → gate pulled low → P-MOSFET conducts → motor on.</li>
+  <li><b>Pin configured as INPUT</b> (high impedance) → pull-up holds the gate at VCC → P-MOSFET off → motor off.</li>
+</ul>
+
+<p class = "margin"></p>
+
+Crucially, this is boot-safe. The XIAO's GPIO defaults to INPUT at reset, so the pull-up keeps the MOSFET off all the way through power-on before <code>setup()</code> runs. No twitching motor at boot.
+
+<p class = "margin"></p>
+
+
+<h4>RSSI smoothing + hysteresis</h4>
+<p class = "margin"></p>
+
+Raw RSSI off a single packet is noisy — it can swing 10+ dB packet-to-packet from multipath, antenna orientation, or someone walking past. So the receiver keeps a 10-sample rolling window and acts on the average.
+
+<p class = "margin"></p>
+
+The decision is a hysteresis pair, not a single threshold:
+<ul>
+  <li>Motor turns <b>ON</b> when avg RSSI drops below <b>−45 dBm</b> (neighbor is far — go chase).</li>
+  <li>Motor turns <b>OFF</b> when avg RSSI rises above <b>−35 dBm</b> (neighbor is close — caught up).</li>
+</ul>
+
+<p class = "margin"></p>
+
+The 10 dB gap between the two thresholds is the deadband. Without it, RSSI hovering right at the threshold would chatter the motor on/off many times a second. Calibration is loose — at indoor short range, ~−28 dBm reads when the boards are basically touching and ~−50 dBm at about 2.5 m. These same constants carry over directly into the final-project follower.
+
+<p class = "margin"></p>
+
+There's also a 1-second watchdog: if no packet arrives for that long (sender dies, board reboots, bad antenna day) the receiver forces the motor off rather than running forever on stale data.
+
+<p class = "margin"></p>
+
+
+<h4>Sender sketch</h4>
+<p class = "margin"></p>
+
+<a href="mvp_sender.ino" download>mvp_sender.ino</a>
+
+<p class = "margin"></p>
+
+```cpp
+#include <esp_now.h>
+#include <WiFi.h>
+
+uint8_t peerAddress[] = {0x58, 0x8C, 0x81, 0x9F, 0xBA, 0xA8};
+
+typedef struct struct_message {
+  uint32_t packet_id;
+} struct_message;
+
+struct_message msg;
+esp_now_peer_info_t peerInfo;
+
+void setup() {
+  Serial.begin(115200);
+  delay(500);
+
+  WiFi.mode(WIFI_STA);
+
+  if (esp_now_init() != ESP_OK) {
+    Serial.println("ESP-NOW init failed");
+    return;
+  }
+
+  memset(&peerInfo, 0, sizeof(peerInfo));
+  memcpy(peerInfo.peer_addr, peerAddress, 6);
+  peerInfo.channel = 0;
+  peerInfo.encrypt = false;
+
+  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
+    Serial.println("Failed to add peer");
+    return;
+  }
+
+  msg.packet_id = 0;
+}
+
+void loop() {
+  msg.packet_id++;
+  esp_now_send(peerAddress, (uint8_t *)&msg, sizeof(msg));
+  Serial.print("Sent packet ");
+  Serial.println(msg.packet_id);
+  delay(200);  // 5 Hz
+}
+```
+
+<p class = "margin"></p>
+
+
+<h4>Receiver sketch</h4>
+<p class = "margin"></p>
+
+<a href="mvp_receiver.ino" download>mvp_receiver.ino</a>
+
+<p class = "margin"></p>
+
+```cpp
+#include <esp_now.h>
+#include <WiFi.h>
+
+const int motorPin = D1;   // gate-control pin for the P-MOSFET (needs external pull-up to VCC)
+
+typedef struct struct_message {
+  uint32_t packet_id;
+} struct_message;
+
+struct_message incomingMsg;
+
+// RSSI smoothing
+const int WINDOW = 10;
+int rssiBuffer[WINDOW];
+int rssiIndex = 0;
+bool bufferFilled = false;
+
+// Follow behavior: motor ON when leader is far (weak signal), OFF when caught up.
+// Hysteresis: start chasing once below FAR_ON, stop once back above FAR_OFF.
+// Calibrated for indoor short-range demo: ~-28 dBm at touching, ~-50 dBm at 2.5 m.
+const int RSSI_FAR_ON  = -45;   // ~1.5 m away → start chasing
+const int RSSI_FAR_OFF = -35;   // ~30–50 cm away → caught up, stop
+
+// Watchdog: if no packet for this long, force motor OFF.
+const unsigned long PACKET_TIMEOUT_MS = 1000;
+
+volatile bool motorOn = false;
+volatile unsigned long lastPacketMillis = 0;
+
+float avgRSSI() {
+  int count = bufferFilled ? WINDOW : rssiIndex;
+  if (count == 0) return -100.0;
+  long sum = 0;
+  for (int i = 0; i < count; i++) sum += rssiBuffer[i];
+  return (float)sum / count;
+}
+
+const char* classify(float rssi) {
+  if (rssi > -55) return "NEAR";
+  if (rssi > -70) return "MID";
+  return "FAR";
+}
+
+void setMotor(bool on) {
+  if (on == motorOn) return;
+  motorOn = on;
+  if (on) {
+    pinMode(motorPin, OUTPUT);
+    digitalWrite(motorPin, LOW);   // P-MOSFET ON
+  } else {
+    pinMode(motorPin, INPUT);      // pull-up holds gate high = OFF
+  }
+}
+
+void onReceive(const esp_now_recv_info *info, const uint8_t *incomingData, int len) {
+  if (len != sizeof(incomingMsg)) {
+    Serial.println("Unexpected packet size");
+    return;
+  }
+
+  memcpy(&incomingMsg, incomingData, sizeof(incomingMsg));
+  lastPacketMillis = millis();
+
+  int rssi = info->rx_ctrl->rssi;
+  rssiBuffer[rssiIndex++] = rssi;
+  if (rssiIndex >= WINDOW) {
+    rssiIndex = 0;
+    bufferFilled = true;
+  }
+
+  float avg = avgRSSI();
+
+  if (!motorOn && avg < RSSI_FAR_ON)        setMotor(true);
+  else if (motorOn && avg > RSSI_FAR_OFF)   setMotor(false);
+
+  Serial.print("id=");
+  Serial.print(incomingMsg.packet_id);
+  Serial.print(" raw=");
+  Serial.print(rssi);
+  Serial.print(" avg=");
+  Serial.print(avg, 1);
+  Serial.print(" class=");
+  Serial.print(classify(avg));
+  Serial.print(" motor=");
+  Serial.println(motorOn ? "ON" : "OFF");
+}
+
+void setup() {
+  Serial.begin(115200);
+  delay(500);
+
+  pinMode(motorPin, INPUT);   // boot-safe: pull-up keeps MOSFET off
+
+  WiFi.mode(WIFI_STA);
+
+  if (esp_now_init() != ESP_OK) {
+    Serial.println("ESP-NOW init failed");
+    return;
+  }
+
+  esp_now_register_recv_cb(onReceive);
+}
+
+void loop() {
+  if (motorOn && (millis() - lastPacketMillis > PACKET_TIMEOUT_MS)) {
+    setMotor(false);
+    Serial.println("Watchdog: no packets, motor OFF");
+  }
+  delay(50);
+}
+```
+
+<p class = "margin"></p>
 
 
 </div>
