@@ -1,7 +1,7 @@
 body {
-    font: 20px "Gill Sans", Verdana, sans-serif;
-    line-height: 1.8;
-    color: #000000;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    line-height: 1.7;
+    color: #1a1a1a;
     background-color: #dcdcdc;
     padding-top: 0px !important;
   }
@@ -10,8 +10,49 @@ body {
   padding: 2% 10%;;
 }
 
-p {font-size: 16px;}
+p {font-size: 18px;}
 .margin {margin-bottom: 30px;}
+
+h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 36px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  font-size: 26px;
+  margin-top: 45px;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #888;
+}
+
+h5 {
+  font-size: 21px;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #2d2b33;
+}
+
+h6 {
+  font-size: 18px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+li {font-size: 18px;}
 
 a {
   color: #000000;
