@@ -46,7 +46,7 @@ The video below is the very first milestone of that work — two XIAOs on USB, s
 
 Two boards on the bench:
 <ul>
-  <li><b>Sender</b> — XIAO ESP32-C3, MAC <code>58:8C:81:9D:2A:D4</code>. Just broadcasts a tiny ESP-NOW packet (one <code>uint32_t</code> counter) every 200 ms at 5 Hz. No sensors, no logic — it's a heartbeat.</li>
+  <li><b>Sender</b> — XIAO ESP32-C3, MAC <code>58:8C:81:9D:2A:D4</code>. Just broadcasts a tiny ESP-NOW packet (one <code>uint32&#95;t</code> counter) every 200 ms at 5 Hz. No sensors, no logic — it's a heartbeat.</li>
   <li><b>Receiver</b> — XIAO ESP32-C3, MAC <code>58:8C:81:9F:BA:A8</code>. Receives the packets, pulls the RSSI off each one, smooths it, and uses the smoothed value to switch a DC motor on or off through a P-channel MOSFET.</li>
 </ul>
 
@@ -60,7 +60,7 @@ The MAC addresses are hard-coded into the sender (the receiver's MAC is the dest
 <h4>Why ESP-NOW (not WiFi)</h4>
 <p class = "margin"></p>
 
-ESP-NOW is a peer-to-peer protocol built into the ESP32 radio. No router, no SSID, no IP stack — both boards come up in <code>WIFI_STA</code> mode, register each other as peers by MAC address, and start exchanging frames directly. Latency is tiny (sub-ms) and the receive callback gives you the per-packet RSSI for free, which is what I actually care about. For a swarm of robots that have to find each other anywhere there's no router, this is exactly the right tool.
+ESP-NOW is a peer-to-peer protocol built into the ESP32 radio. No router, no SSID, no IP stack — both boards come up in <code>WIFI&#95;STA</code> mode, register each other as peers by MAC address, and start exchanging frames directly. Latency is tiny (sub-ms) and the receive callback gives you the per-packet RSSI for free, which is what I actually care about. For a swarm of robots that have to find each other anywhere there's no router, this is exactly the right tool.
 
 <p class = "margin"></p>
 
@@ -109,7 +109,7 @@ There's also a 1-second watchdog: if no packet arrives for that long (sender die
 <h4>Sender sketch</h4>
 <p class = "margin"></p>
 
-<a href="mvp_sender.ino" download>mvp_sender.ino</a>
+<a href="mvp_sender.ino" download>mvp&#95;sender.ino</a>
 
 <p class = "margin"></p>
 
@@ -164,7 +164,7 @@ void loop() {
 <h4>Receiver sketch</h4>
 <p class = "margin"></p>
 
-<a href="mvp_receiver.ino" download>mvp_receiver.ino</a>
+<a href="mvp_receiver.ino" download>mvp&#95;receiver.ino</a>
 
 <p class = "margin"></p>
 

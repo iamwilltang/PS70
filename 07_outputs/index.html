@@ -56,15 +56,15 @@ The radio side is the same three-sketch trio I built out for Week 4. I'm includi
 
 <p class = "margin"></p>
 
-<a href="mvp_board_addresses.ino" download>mvp_board_addresses.ino</a> — utility: prints the XIAO's MAC address over serial. You flash it once per board on first setup, copy the MAC into the other board's <code>peerAddress</code> array, and never touch it again.
+<a href="mvp_board_addresses.ino" download>mvp&#95;board&#95;addresses.ino</a> — utility: prints the XIAO's MAC address over serial. You flash it once per board on first setup, copy the MAC into the other board's <code>peerAddress</code> array, and never touch it again.
 
 <p class = "margin"></p>
 
-<a href="mvp_sender.ino" download>mvp_sender.ino</a> — sender: registers the receiver's MAC as an ESP-NOW peer, then broadcasts an incrementing <code>uint32_t packet_id</code> at 5 Hz forever. No sensors, no logic — just a steady heartbeat the receiver can measure RSSI off of.
+<a href="mvp_sender.ino" download>mvp&#95;sender.ino</a> — sender: registers the receiver's MAC as an ESP-NOW peer, then broadcasts an incrementing <code>uint32&#95;t packet&#95;id</code> at 5 Hz forever. No sensors, no logic — just a steady heartbeat the receiver can measure RSSI off of.
 
 <p class = "margin"></p>
 
-<a href="mvp_receiver.ino" download>mvp_receiver.ino</a> — receiver: ingests packets, smooths RSSI over a 10-sample window, and switches a MOSFET-driven DC motor on/off through a hysteresis pair (chase at &minus;45 dBm, stop at &minus;35 dBm). Detailed walkthrough is on the <a href="../04_microcontroller/index.html">Week 4 page</a>.
+<a href="mvp_receiver.ino" download>mvp&#95;receiver.ino</a> — receiver: ingests packets, smooths RSSI over a 10-sample window, and switches a MOSFET-driven DC motor on/off through a hysteresis pair (chase at &minus;45 dBm, stop at &minus;35 dBm). Detailed walkthrough is on the <a href="../04_microcontroller/index.html">Week 4 page</a>.
 
 <p class = "margin"></p>
 
@@ -76,7 +76,7 @@ Alongside the MVP I was prototyping the drive electronics for the robot I planne
 
 <p class = "margin"></p>
 
-<a href="mvp_motor_test.ino" download>mvp_motor_test.ino</a>
+<a href="mvp_motor_test.ino" download>mvp&#95;motor&#95;test.ino</a>
 
 <p class = "margin"></p>
 

@@ -83,10 +83,10 @@ We're not measuring capacitance in farads — we're measuring how strongly a ste
 
 <ol>
   <li>Drive TX high.</li>
-  <li>Read RX with <code>analogRead</code> → <code>read_high</code>.</li>
+  <li>Read RX with <code>analogRead</code> → <code>read&#95;high</code>.</li>
   <li>Wait 100 µs for the line to settle.</li>
   <li>Drive TX low.</li>
-  <li>Read RX again → <code>read_low</code>.</li>
+  <li>Read RX again → <code>read&#95;low</code>.</li>
   <li>Take the difference. That's your one-sample coupling strength.</li>
   <li>Repeat 100 times and sum.</li>
 </ol>

@@ -308,7 +308,7 @@ void loop() {
 
 <p class = "margin"></p>
 
-Full code for all three components (camera firmware, motor firmware, Python server) lives in the team repo: <a href="https://github.com/ElizaKnapp/machine_week">github.com/ElizaKnapp/machine_week</a>.
+Full code for all three components (camera firmware, motor firmware, Python server) lives in the team repo: <a href="https://github.com/ElizaKnapp/machine_week">github.com/ElizaKnapp/machine&#95;week</a>.
 
 <p class = "margin"></p>
 
@@ -316,7 +316,7 @@ Full code for all three components (camera firmware, motor firmware, Python serv
 <h4>Challenges &amp; next steps</h4>
 <p class = "margin"></p>
 
-The biggest issue we hit was getting the Python code to actually detect changes on the board. It was okay at detecting X's and not good at detecting O's at all — the contour-based shape heuristics in <code>_classify_cell</code> would either miss O's entirely or confuse a partly-drawn O with an X. Moving forward we'd try offloading the classification to an actual image-recognition model (a small CNN, or even just sending the cropped cell to a hosted vision API) instead of hand-tuning OpenCV thresholds.
+The biggest issue we hit was getting the Python code to actually detect changes on the board. It was okay at detecting X's and not good at detecting O's at all — the contour-based shape heuristics in <code>&#95;classify&#95;cell</code> would either miss O's entirely or confuse a partly-drawn O with an X. Moving forward we'd try offloading the classification to an actual image-recognition model (a small CNN, or even just sending the cropped cell to a hosted vision API) instead of hand-tuning OpenCV thresholds.
 
 <p class = "margin"></p>
 

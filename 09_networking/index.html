@@ -57,7 +57,7 @@ That photo is the bench-side range test before bolting the radios into the robot
 
 <p class = "margin"></p>
 
-Two robots on the floor. One is running <code>mvp_follower.ino</code> (the predator — uses incoming RSSI to chase whatever's broadcasting); the other is running <code>mvp_prey.ino</code> (the same hardware, opposite intent — flees when the predator's RSSI gets too strong). Both robots also broadcast their own ESP-NOW beacon at 5 Hz so each is simultaneously a transmitter and a receiver. The behavior you see in the video is fully autonomous after both are powered on — no driving, no remote control, just radios reacting to each other.
+Two robots on the floor. One is running <code>mvp&#95;follower.ino</code> (the predator — uses incoming RSSI to chase whatever's broadcasting); the other is running <code>mvp&#95;prey.ino</code> (the same hardware, opposite intent — flees when the predator's RSSI gets too strong). Both robots also broadcast their own ESP-NOW beacon at 5 Hz so each is simultaneously a transmitter and a receiver. The behavior you see in the video is fully autonomous after both are powered on — no driving, no remote control, just radios reacting to each other.
 
 <p class = "margin"></p>
 
@@ -115,7 +115,7 @@ The robot is always moving. It never stops to think — when it decides the curv
 
 <p class = "margin"></p>
 
-To pull this off without losing radio packets, the stepper-driving code is a non-blocking step-pulse generator: every loop iteration, <code>motorsTick()</code> checks whether each motor is due for its next step pulse based on its own period (<code>FAST_PERIOD_US</code> or <code>SLOW_PERIOD_US</code>). The two motors run from independent timers, so one can be at full speed while the other coasts at quarter speed — that's where the smooth curve comes from. ESP-NOW packets continue to arrive and update RSSI during all of this.
+To pull this off without losing radio packets, the stepper-driving code is a non-blocking step-pulse generator: every loop iteration, <code>motorsTick()</code> checks whether each motor is due for its next step pulse based on its own period (<code>FAST&#95;PERIOD&#95;US</code> or <code>SLOW&#95;PERIOD&#95;US</code>). The two motors run from independent timers, so one can be at full speed while the other coasts at quarter speed — that's where the smooth curve comes from. ESP-NOW packets continue to arrive and update RSSI during all of this.
 
 <p class = "margin"></p>
 
@@ -123,7 +123,7 @@ To pull this off without losing radio packets, the stepper-driving code is a non
 <h5>Symmetry breaking</h5>
 <p class = "margin"></p>
 
-The final project is a 3-robot triangle (A chases B, B chases C, C chases A). If all three predators are coded to start curving right, they end up rotating outward together and the triangle collapses. To break that, every robot has an <code>INITIAL_CURVE</code> constant that alternates L / R / L around the triangle. The constants live in a clearly-flagged block at the top of <code>mvp_follower.ino</code> — same sketch, same binary, three different curve initializations.
+The final project is a 3-robot triangle (A chases B, B chases C, C chases A). If all three predators are coded to start curving right, they end up rotating outward together and the triangle collapses. To break that, every robot has an <code>INITIAL&#95;CURVE</code> constant that alternates L / R / L around the triangle. The constants live in a clearly-flagged block at the top of <code>mvp&#95;follower.ino</code> — same sketch, same binary, three different curve initializations.
 
 <p class = "margin"></p>
 
@@ -144,7 +144,7 @@ DriveMode INITIAL_CURVE = CURVE_LEFT_MODE;
 
 <p class = "margin"></p>
 
-To keep this week's two-robot demo clean: one robot was running <code>mvp_follower.ino</code> targeting the other's MAC, and the other was running <code>mvp_prey.ino</code> (which doesn't filter by source MAC — it reacts to whatever ESP-NOW beacon it hears, and there's only one beacon in the room).
+To keep this week's two-robot demo clean: one robot was running <code>mvp&#95;follower.ino</code> targeting the other's MAC, and the other was running <code>mvp&#95;prey.ino</code> (which doesn't filter by source MAC — it reacts to whatever ESP-NOW beacon it hears, and there's only one beacon in the room).
 
 <p class = "margin"></p>
 
@@ -157,7 +157,7 @@ A subtle but important choice: both robots send their beacons to the broadcast a
 <ul>
   <li>Adding a new robot doesn't require updating every other robot's peer list.</li>
   <li>Anyone listening on the same WiFi channel hears every beacon, so each robot has full visibility into all the others.</li>
-  <li>The "who do I chase" decision is made <i>on the receive side</i> by filtering on <code>info-&gt;src_addr == TARGET_MAC</code>. That filter is what turns "I hear everyone" into "I chase only my specific target."</li>
+  <li>The "who do I chase" decision is made <i>on the receive side</i> by filtering on <code>info-&gt;src&#95;addr == TARGET&#95;MAC</code>. That filter is what turns "I hear everyone" into "I chase only my specific target."</li>
 </ul>
 
 <p class = "margin"></p>
@@ -183,11 +183,11 @@ The follower uses different thresholds from the prey (and both are different fro
 <h4>Source files</h4>
 <p class = "margin"></p>
 
-<a href="mvp_follower.ino" download>mvp_follower.ino</a> — the predator, also the canonical "robot" sketch for the final project. Each of the three triangle robots runs this same file with <code>TARGET_MAC</code> and <code>INITIAL_CURVE</code> swapped.
+<a href="mvp_follower.ino" download>mvp&#95;follower.ino</a> — the predator, also the canonical "robot" sketch for the final project. Each of the three triangle robots runs this same file with <code>TARGET&#95;MAC</code> and <code>INITIAL&#95;CURVE</code> swapped.
 
 <p class = "margin"></p>
 
-<a href="mvp_prey.ino" download>mvp_prey.ino</a> — the prey from this week's two-robot demo. Same hardware as the follower; same motor primitives; the decision loop is the follower's logic with the gradient-ascent comparison flipped to gradient descent.
+<a href="mvp_prey.ino" download>mvp&#95;prey.ino</a> — the prey from this week's two-robot demo. Same hardware as the follower; same motor primitives; the decision loop is the follower's logic with the gradient-ascent comparison flipped to gradient descent.
 
 <p class = "margin"></p>
 

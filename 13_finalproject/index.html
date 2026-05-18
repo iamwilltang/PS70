@@ -162,7 +162,7 @@ Every printed part used in the final build is mirrored here as a <code>.step</co
 <h4>Software: one sketch, three configs</h4>
 <p class = "margin"></p>
 
-All three robots run the same sketch architecture — the only differences across <code>mvp_robotA.ino</code>, <code>mvp_robotB.ino</code>, and <code>mvp_robotC.ino</code> are two constants at the top of the file. Everything else (the motor primitives, the RSSI smoothing, the decision loop, the watchdog, the beacon broadcast) is byte-for-byte identical.
+All three robots run the same sketch architecture — the only differences across <code>mvp&#95;robotA.ino</code>, <code>mvp&#95;robotB.ino</code>, and <code>mvp&#95;robotC.ino</code> are two constants at the top of the file. Everything else (the motor primitives, the RSSI smoothing, the decision loop, the watchdog, the beacon broadcast) is byte-for-byte identical.
 
 <p class = "margin"></p>
 
@@ -263,7 +263,7 @@ The robot is always moving. It never stops to think. When it decides a curve dir
 
 <p class = "margin"></p>
 
-The way that works without dropping radio packets is a non-blocking step-pulse generator. Each motor has its own period (<code>FAST_PERIOD_US</code> or <code>SLOW_PERIOD_US</code>). Every loop iteration, <code>motorsTick()</code> checks whether each motor is due for its next pulse:
+The way that works without dropping radio packets is a non-blocking step-pulse generator. Each motor has its own period (<code>FAST&#95;PERIOD&#95;US</code> or <code>SLOW&#95;PERIOD&#95;US</code>). Every loop iteration, <code>motorsTick()</code> checks whether each motor is due for its next pulse:
 
 <p class = "margin"></p>
 
@@ -299,7 +299,7 @@ Every robot sends its beacon to the broadcast address (<code>FF:FF:FF:FF:FF:FF</
 <ul>
   <li>Adding a robot doesn't require updating every other robot's peer list.</li>
   <li>Every robot hears every beacon, so each has full visibility into all the others on the same WiFi channel.</li>
-  <li>The "who do I chase" decision happens <i>on the receive side</i> by filtering on <code>info-&gt;src_addr == TARGET_MAC</code>. That filter is what turns "I hear everyone" into "I chase only my specific target."</li>
+  <li>The "who do I chase" decision happens <i>on the receive side</i> by filtering on <code>info-&gt;src&#95;addr == TARGET&#95;MAC</code>. That filter is what turns "I hear everyone" into "I chase only my specific target."</li>
 </ul>
 
 <p class = "margin"></p>
@@ -327,12 +327,12 @@ This is what makes the architecture scale cleanly to N robots without rewiring t
 <h5>Symmetry breaking</h5>
 <p class = "margin"></p>
 
-If all three robots happened to start curving in the same direction at the same time, they'd rotate outward in unison and the triangle would collapse to no chase at all. The fix is one constant per robot — <code>INITIAL_CURVE</code> alternating L / R / L around the triangle — so each robot's <code>lastGoodCurve</code> seed is different from its neighbors':
+If all three robots happened to start curving in the same direction at the same time, they'd rotate outward in unison and the triangle would collapse to no chase at all. The fix is one constant per robot — <code>INITIAL&#95;CURVE</code> alternating L / R / L around the triangle — so each robot's <code>lastGoodCurve</code> seed is different from its neighbors':
 
 <ul>
-  <li>Robot A: <code>CURVE_LEFT_MODE</code></li>
-  <li>Robot B: <code>CURVE_RIGHT_MODE</code></li>
-  <li>Robot C: <code>CURVE_LEFT_MODE</code></li>
+  <li>Robot A: <code>CURVE&#95;LEFT&#95;MODE</code></li>
+  <li>Robot B: <code>CURVE&#95;RIGHT&#95;MODE</code></li>
+  <li>Robot C: <code>CURVE&#95;LEFT&#95;MODE</code></li>
 </ul>
 
 <p class = "margin"></p>
@@ -360,7 +360,7 @@ If no target packet arrives for 1 second (target died, target rebooted, target m
 
 <p class = "margin"></p>
 
-As soon as a packet comes back in and the smoothed RSSI is above <code>RSSI_LOST</code> (−85 dBm), the robot transitions out of IDLE on its own.
+As soon as a packet comes back in and the smoothed RSSI is above <code>RSSI&#95;LOST</code> (−85 dBm), the robot transitions out of IDLE on its own.
 
 <p class = "margin"></p>
 
@@ -368,7 +368,7 @@ As soon as a packet comes back in and the smoothed RSSI is above <code>RSSI_LOST
 <h4>Per-robot config — the only thing that differs</h4>
 <p class = "margin"></p>
 
-The entire difference between <code>mvp_robotA.ino</code>, <code>mvp_robotB.ino</code>, and <code>mvp_robotC.ino</code> is this constant block at the top:
+The entire difference between <code>mvp&#95;robotA.ino</code>, <code>mvp&#95;robotB.ino</code>, and <code>mvp&#95;robotC.ino</code> is this constant block at the top:
 
 <p class = "margin"></p>
 
@@ -395,9 +395,9 @@ To add a 4th robot D to the cycle (A→B→C→D→A): print another chassis, fl
 <h4>Source files</h4>
 <p class = "margin"></p>
 
-<a href="mvp_robotA.ino" download>mvp_robotA.ino</a> &nbsp;|&nbsp;
-<a href="mvp_robotB.ino" download>mvp_robotB.ino</a> &nbsp;|&nbsp;
-<a href="mvp_robotC.ino" download>mvp_robotC.ino</a>
+<a href="mvp_robotA.ino" download>mvp&#95;robotA.ino</a> &nbsp;|&nbsp;
+<a href="mvp_robotB.ino" download>mvp&#95;robotB.ino</a> &nbsp;|&nbsp;
+<a href="mvp_robotC.ino" download>mvp&#95;robotC.ino</a>
 
 <p class = "margin"></p>
 
@@ -410,7 +410,7 @@ The final project isn't a thing I built in one week — it's the integration of 
 <ul>
   <li><b><a href="../04_microcontroller/index.html">Week 4 — Microcontroller</a></b>: two XIAOs talking over ESP-NOW, RSSI smoothed with a 10-sample window, hysteresis-based motor on/off, packet-timeout watchdog. The smoothing + watchdog code survives essentially unchanged.</li>
   <li><b><a href="../07_outputs/index.html">Week 7 — Electronic Outputs</a></b>: first time a XIAO drove a real differential-drive mobile platform (borrowed for the MVP). Proved the motor-control half of the loop on actual rolling hardware.</li>
-  <li><b><a href="../09_networking/index.html">Week 9 — Networking</a></b>: the gradient-ascent decision loop, the non-blocking step generator, the broadcast-plus-filter messaging architecture, the symmetry-breaking <code>INITIAL_CURVE</code> idea. Demoed on two robots; everything generalizes.</li>
+  <li><b><a href="../09_networking/index.html">Week 9 — Networking</a></b>: the gradient-ascent decision loop, the non-blocking step generator, the broadcast-plus-filter messaging architecture, the symmetry-breaking <code>INITIAL&#95;CURVE</code> idea. Demoed on two robots; everything generalizes.</li>
   <li><b>3D design / fabrication weeks</b>: the chassis, wheels, mount, and battery holder are all parts I designed and printed across the 3D-printing and CAD weeks. The final robots are the third design pass on the chassis after the first version was too tall (high center of gravity, tippy) and the second was too cramped to mount the antenna upright.</li>
 </ul>
 
@@ -423,8 +423,8 @@ The final project isn't a thing I built in one week — it's the integration of 
 A few directions that build directly on what's working now:
 
 <ul>
-  <li><b>Scale up the swarm</b>: the broadcast + filter-on-receive architecture means N robots needs no code change beyond the per-robot <code>TARGET_MAC</code> and <code>INITIAL_CURVE</code> constants. Genuinely interesting behaviors — waves, mutual avoidance, leader emergence — probably start showing up around N = 6 robots, where the cycle graph has enough length for the pursuit dynamics to actually loop instead of just spiral.</li>
-  <li><b>A different-colored pen on each robot</b>: strap a marker to each chassis (one robot per color) and let them draw their own paths while chasing. The output is a physical trace of the swarm's emergent geometry — every demo becomes a one-of-a-kind drawing. From there, sweep the tunable parameters (<code>DECISION_INTERVAL_MS</code>, <code>RSSI_IMPROVE_THRESHOLD</code>, <code>FLIP_THRESHOLD</code>, the curve speed divisor) to find the values that maximize <i>shape complexity</i> in the trace — basically a fitness function over the parameter space, where the metric is something like "how many distinct loops / cusps / self-intersections does each color draw."</li>
+  <li><b>Scale up the swarm</b>: the broadcast + filter-on-receive architecture means N robots needs no code change beyond the per-robot <code>TARGET&#95;MAC</code> and <code>INITIAL&#95;CURVE</code> constants. Genuinely interesting behaviors — waves, mutual avoidance, leader emergence — probably start showing up around N = 6 robots, where the cycle graph has enough length for the pursuit dynamics to actually loop instead of just spiral.</li>
+  <li><b>A different-colored pen on each robot</b>: strap a marker to each chassis (one robot per color) and let them draw their own paths while chasing. The output is a physical trace of the swarm's emergent geometry — every demo becomes a one-of-a-kind drawing. From there, sweep the tunable parameters (<code>DECISION&#95;INTERVAL&#95;MS</code>, <code>RSSI&#95;IMPROVE&#95;THRESHOLD</code>, <code>FLIP&#95;THRESHOLD</code>, the curve speed divisor) to find the values that maximize <i>shape complexity</i> in the trace — basically a fitness function over the parameter space, where the metric is something like "how many distinct loops / cusps / self-intersections does each color draw."</li>
   <li><b>Blind bulldozing</b>: a known swarm robotics behavior where robots with no global map and no shared communication still produce coordinated rearrangement of objects (the canonical example is termites building mounds). The chase-by-RSSI primitive I already have is one half of the story — adding a simple "if I'm physically blocked, change heading" reflex (bumper switch or motor stall detection) on top of it would let the swarm push pucks/blocks into clusters without anyone having to know where the cluster is. Closer to the original "no-formation-control, all-emergent" thesis of this project than the chase itself is.</li>
 </ul>
 
