@@ -304,7 +304,7 @@ Every robot sends its beacon to the broadcast address (<code>FF:FF:FF:FF:FF:FF</
 
 <p class = "margin"></p>
 
-<pre><code class="lang-cpp">void onReceive(const esp_now_recv_info *info, const uint8_t *data, int len) {
+<pre><code class="lang-cpp">void onReceive(const esp_now_recv_info &#42;info, const uint8_t &#42;data, int len) {
   if (len != sizeof(incomingMsg)) return;
   if (memcmp(info-&gt;src_addr, TARGET_MAC, 6) != 0) return;   // ← the filter
 

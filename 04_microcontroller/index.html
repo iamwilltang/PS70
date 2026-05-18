@@ -151,7 +151,7 @@ void setup() {
 
 void loop() {
   msg.packet_id++;
-  esp_now_send(peerAddress, (uint8_t *)&amp;msg, sizeof(msg));
+  esp_now_send(peerAddress, (uint8_t &#42;)&amp;msg, sizeof(msg));
   Serial.print("Sent packet ");
   Serial.println(msg.packet_id);
   delay(200);  // 5 Hz
@@ -205,7 +205,7 @@ float avgRSSI() {
   return (float)sum / count;
 }
 
-const char* classify(float rssi) {
+const char&#42; classify(float rssi) {
   if (rssi &gt; -55) return "NEAR";
   if (rssi &gt; -70) return "MID";
   return "FAR";
@@ -222,7 +222,7 @@ void setMotor(bool on) {
   }
 }
 
-void onReceive(const esp_now_recv_info *info, const uint8_t *incomingData, int len) {
+void onReceive(const esp_now_recv_info &#42;info, const uint8_t &#42;incomingData, int len) {
   if (len != sizeof(incomingMsg)) {
     Serial.println("Unexpected packet size");
     return;
