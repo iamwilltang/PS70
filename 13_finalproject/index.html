@@ -109,7 +109,7 @@ The whole chassis is parts I designed and printed for this project, not a kit:
 <ul>
   <li><b>Robot chassis</b> — the main deck that everything mounts to.</li>
   <li><b>Unipolar motor mounts</b> — bracket the 28BYJ-48 stepper bodies to the chassis at the right ride height.</li>
-  <li><b>Stepper wheels + extenders</b> — printed wheels that fit directly onto the 28BYJ-48 D-shaft, plus extenders to space them out to the right track width.</li>
+  <li><b>Stepper wheels + extenders</b> (printed, but not used in the final — see below) — wheels designed to fit directly onto the 28BYJ-48 D-shaft, plus extenders to space them out to the right track width.</li>
   <li><b>Microcontroller holder</b> — keeps the XIAO + protoboard mounted and the antenna oriented up.</li>
   <li><b>Battery holder</b> — bracket for the 5 V pack so the robots can run untethered.</li>
   <li><b>Ball bearing structure</b> — front caster that supports the un-driven end (differential drive has 2 motorized wheels; the third contact point is just a smooth glider).</li>
@@ -125,7 +125,29 @@ The whole chassis is parts I designed and printed for this project, not a kit:
 
 <p class = "margin"></p>
 
-<img src="assembled-robot.jpg" alt="A single fully-assembled robot with chassis, motors, wheels, microcontroller, antenna, and battery pack" width="500">
+One concession to uniformity: I ended up <i>not</i> using the printed stepper wheels in the final build. Each printed wheel came off the printer slightly differently — small variations in diameter, roundness, and grip — which meant the three robots all crept differently even when given identical step commands. To keep "the radios are the variable" actually true, I ordered a set of the standard yellow toy DC-motor wheels (the rubber-tired ones every hobby robot kit ships with) and pressed them onto the stepper shafts using the printed extenders. Three identical bought wheels gave me three robots that tracked the same straight line, which mattered more than the wheels being bespoke.
+
+<p class = "margin"></p>
+
+<img src="assembled-robot.jpg" alt="A single fully-assembled robot with chassis, motors, yellow toy wheels, microcontroller, antenna, and battery pack" width="500">
+
+<p class = "margin"></p>
+
+
+<h5>3D files (download)</h5>
+<p class = "margin"></p>
+
+Every printed part used in the final build is mirrored here so the robots are reproducible end-to-end. <code>.step</code> drops into any CAD tool (Fusion, OnShape, SolidWorks) for editing; a couple of parts only have <code>.3mf</code> on hand.
+
+<ul>
+  <li><b>Robot chassis</b> — <a href="3d_files/robot-chassis.step" download>robot-chassis.step</a></li>
+  <li><b>Unipolar motor mount</b> (28BYJ-48 bracket) — <a href="3d_files/unipolar-motor-mount.3mf" download>unipolar-motor-mount.3mf</a></li>
+  <li><b>Microcontroller holder</b> — <a href="3d_files/microcontroller-holder.step" download>microcontroller-holder.step</a></li>
+  <li><b>Battery holder</b> — <a href="3d_files/battery-holder.step" download>battery-holder.step</a></li>
+  <li><b>Ball bearing caster</b> (front, un-driven point) — <a href="3d_files/ball-bearing-caster.step" download>ball-bearing-caster.step</a></li>
+  <li><b>Wheel extender</b> (adapts the yellow toy wheels onto the 28BYJ-48 D-shaft) — <a href="3d_files/stepper-wheel-extender.3mf" download>stepper-wheel-extender.3mf</a></li>
+  <li><b>Unipolar stepper wheel</b> — designed for this build but <i>not</i> used in the final demo (see the uniformity note above); included for completeness — <a href="3d_files/unipolar-stepperwheel.step" download>unipolar-stepperwheel.step</a></li>
+</ul>
 
 <p class = "margin"></p>
 
