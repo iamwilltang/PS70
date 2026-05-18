@@ -12,7 +12,11 @@
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.svg\" cute-cat.svg)",
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.jpg\" cute-cat.jpg)",
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/Group4Goldfish.f3d\" group4-goldfish.f3d)",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 08_cnc/)"
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 08_cnc/)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_follower/mvp_follower.ino\" mvp_follower.ino)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_prey/mvp_prey.ino\" mvp_prey.ino)",
+      "Bash(python -c \"import pillow_heif; pillow_heif.register_heif_opener\\(\\); from PIL import Image; im=Image.open\\(r'C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/two xiaos with antennas.HEIC'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\(r'c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70/09_networking/xiaos-with-antennas.jpg','JPEG',quality=85\\); print\\(im.size\\)\")",
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 09_networking/)"
     ]
   }
 }
