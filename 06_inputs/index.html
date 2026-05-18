@@ -62,10 +62,12 @@ Both electrodes wire back to a XIAO ESP32-C3 with alligator clips:
 <p class = "margin"></p>
 
 <img src="system-design.jpg" alt="Cardboard rail capacitive sensor setup with XIAO and alligator clips" width="500">
+<p class="caption">Side view of the rig — XIAO on the breakout board, alligator clips running to the TX and RX foil patches.</p>
 
 <p class = "margin"></p>
 
 <img src="measuring-with-ruler.jpg" alt="Top-down view of the sensor rail with the ruler visible" width="400">
+<p class="caption">Top-down view with the ruler in frame — block slides along the rail to known distances during calibration.</p>
 
 <p class = "margin"></p>
 
@@ -174,6 +176,7 @@ The data:
 <p class = "margin"></p>
 
 <img src="capacitance-vs-distance.png" alt="Plot of summed capacitive coupling reading vs distance" width="500">
+<p class="caption">Summed reading vs distance — roughly 1/d falloff until it hits the ~45 000 noise floor at 6 cm.</p>
 
 <p class = "margin"></p>
 
@@ -186,6 +189,7 @@ The setup, mid-calibration with the wooden block on the rail:
 <p class = "margin"></p>
 
 <img src="setup-in-action.jpg" alt="Sensor calibration in action with laptop showing the serial monitor data" width="500">
+<p class="caption">Mid-calibration — block on the rail, serial monitor streaming readings on the laptop.</p>
 
 <p class = "margin"></p>
 
@@ -210,6 +214,10 @@ The receiver code uses two calibrated thresholds — chase if RSSI drops below �
 
 <p class = "margin"></p>
 
+<div class="week-nav">
+  <a href="../05_3Ddesign/index.html" class="week-nav-prev">← Prev: Week 5 — 3D Design</a>
+  <a href="../07_outputs/index.html" class="week-nav-next">Next: Week 7 — Outputs →</a>
+</div>
 
 </div>
 </xmp>

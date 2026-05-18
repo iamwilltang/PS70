@@ -173,12 +173,86 @@ pre code {
 }
 
 .caption {
-  color: gray;
-  font-size: 16px;
+  color: #555;
+  font-size: 15px;
   text-align: center;
   font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
 }
 
 #aboutme {
   padding: 20px;
 }
+
+/* Landing-page tile hover-lift (ps70.html week tiles) */
+.week-tile {
+  padding: 18px 12px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.week-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.week-tile a {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.week-tile a:hover {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.week-tile img {
+  border-radius: 8px;
+}
+
+.week-tile-label {
+  display: block;
+  margin-top: 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Prev / Next week footer navigation */
+.week-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 22px;
+  border-top: 1px solid #b8c8d8;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.week-nav a {
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.week-nav a:hover {
+  background-color: rgba(44, 62, 80, 0.10);
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.week-nav-prev { margin-right: auto; }
+.week-nav-next { margin-left: auto; }
+.week-nav-spacer { color: transparent; user-select: none; }
