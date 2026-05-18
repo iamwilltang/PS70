@@ -16,7 +16,17 @@
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_follower/mvp_follower.ino\" mvp_follower.ino)",
       "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_prey/mvp_prey.ino\" mvp_prey.ino)",
       "Bash(python -c \"import pillow_heif; pillow_heif.register_heif_opener\\(\\); from PIL import Image; im=Image.open\\(r'C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/two xiaos with antennas.HEIC'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\(r'c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70/09_networking/xiaos-with-antennas.jpg','JPEG',quality=85\\); print\\(im.size\\)\")",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 09_networking/)"
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 09_networking/)",
+      "WebFetch(domain:wtrenteetun31.github.io)",
+      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/IMG_6798.jpeg\" -o img-6798.jpeg)",
+      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/IMG_6799.jpeg\" -o img-6799.jpeg)",
+      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/Screenshot%202026-04-26%20at%2010.46.09%E2%80%AFPM.png\" -o debug-grid.png)",
+      "Bash(python -c \"from PIL import Image; im = Image.open\\('img-6798.jpeg'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\('img-6798.jpeg', 'JPEG', quality=85\\); print\\('6798:', im.size\\); im=Image.open\\('img-6799.jpeg'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\('img-6799.jpeg', 'JPEG', quality=85\\); print\\('6799:', im.size\\)\")",
+      "Bash(rm debug-grid.png)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/debug_grid.jpg\" debug-grid.jpg)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/detect.py\" detect.py)",
+      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/README.md\" README.md)",
+      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 10_machine/)"
     ]
   }
 }
