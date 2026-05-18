@@ -168,9 +168,15 @@ pre {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
   overflow-x: auto;
   margin: 24px 0;
+  white-space: pre;
+  tab-size: 4;
+  -moz-tab-size: 4;
 }
 
-/* Reset the inline-pill styling on code that's INSIDE a pre block */
+/* Reset the inline-pill styling on code that's INSIDE a pre block.
+   white-space: pre is REQUIRED here — Google Code Prettify (which
+   strapdown invokes) checks the <code> element's computed white-space
+   and collapses indentation if it isn't "pre". */
 pre code {
   background-color: transparent;
   color: inherit;
@@ -178,6 +184,11 @@ pre code {
   padding: 0;
   font-size: inherit;
   border-radius: 0;
+  white-space: pre;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  display: block;
+  font-family: inherit;
 }
 
 .caption {

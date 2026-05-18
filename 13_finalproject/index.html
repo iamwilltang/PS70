@@ -426,13 +426,12 @@ The final project isn't a thing I built in one week — it's the integration of 
 <h4>What I'd do next</h4>
 <p class = "margin"></p>
 
-A few things I deliberately didn't do but would be the natural next steps:
+A few directions that build directly on what's working now:
 
 <ul>
-  <li><b>Onboard battery management</b>: right now the 5 V pack just runs everything until it sags. A small monitor on the battery rail + a serial warning would let the robot land gracefully instead of behaving erratically as voltage drops.</li>
-  <li><b>Recovery behavior when signal is lost</b>: currently the watchdog just stops the robot. A smarter version would spin in place to search for the target before giving up.</li>
-  <li><b>Per-robot RSSI calibration</b>: each XIAO + antenna combination has a slightly different RSSI baseline. The threshold constants are tuned for one robot and "close enough" for the others; a calibration pass would tighten chase behavior.</li>
-  <li><b>Bigger swarm</b>: the architecture scales to N robots with no code changes beyond per-robot constants. Genuinely interesting behaviors (waves, mutual avoidance, leader emergence) probably start at N=6 or so.</li>
+  <li><b>Scale up the swarm</b>: the broadcast + filter-on-receive architecture means N robots needs no code change beyond the per-robot <code>TARGET_MAC</code> and <code>INITIAL_CURVE</code> constants. Genuinely interesting behaviors — waves, mutual avoidance, leader emergence — probably start showing up around N = 6 robots, where the cycle graph has enough length for the pursuit dynamics to actually loop instead of just spiral.</li>
+  <li><b>A different-colored pen on each robot</b>: strap a marker to each chassis (one robot per color) and let them draw their own paths while chasing. The output is a physical trace of the swarm's emergent geometry — every demo becomes a one-of-a-kind drawing. From there, sweep the tunable parameters (<code>DECISION_INTERVAL_MS</code>, <code>RSSI_IMPROVE_THRESHOLD</code>, <code>FLIP_THRESHOLD</code>, the curve speed divisor) to find the values that maximize <i>shape complexity</i> in the trace — basically a fitness function over the parameter space, where the metric is something like "how many distinct loops / cusps / self-intersections does each color draw."</li>
+  <li><b>Blind bulldozing</b>: a known swarm robotics behavior where robots with no global map and no shared communication still produce coordinated rearrangement of objects (the canonical example is termites building mounds). The chase-by-RSSI primitive I already have is one half of the story — adding a simple "if I'm physically blocked, change heading" reflex (bumper switch or motor stall detection) on top of it would let the swarm push pucks/blocks into clusters without anyone having to know where the cluster is. Closer to the original "no-formation-control, all-emergent" thesis of this project than the chase itself is.</li>
 </ul>
 
 <p class = "margin"></p>
