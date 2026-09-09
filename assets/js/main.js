@@ -97,9 +97,7 @@
     $window.on('load', function(){
         
         /*======== Preloader ===========*/
-       setTimeout(function() {
-            $('body').addClass('loaded');
-        }, 2500);
+        $('body').addClass('loaded');
 
     });
 

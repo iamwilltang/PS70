@@ -486,40 +486,46 @@ h4.about-heading {
 	font-size: 16px;
     text-align: center;
 }
-.about-area .single-skill{
-    margin-bottom: 32px;
+.about-area .skill-group{
+    margin-bottom: 38px;
 }
-.about-area .skill-info {
-	overflow: hidden;
+.about-area .skill-group:last-child{
+    margin-bottom: 0;
 }
-.about-area .skill-info h4 {
+.about-area h4.skill-group-title {
+    font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	font-size: 15px;
-	margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+	margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ddd;
+    color: #222;
+}
+.about-area .skill-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.about-area .skill-list li{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 11px;
+    font-size: 15px;
+    line-height: 24px;
     color: #444;
 }
-.about-area .progress {
-	height: 8px;
-	border-radius: 0px;
-	box-shadow: none;
-	overflow: visible;
-    background-color: #ddd;
+.about-area .skill-list li:last-child{
+    margin-bottom: 0;
 }
-.about-area .progress .progress-bar {
-	position: relative;
-}
-.about-area .progress .progress-bar span {
-	font-size: 16px;
-	right: 0;
-	color: #fff;
-	position: absolute;
-	top: -17px;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 100%;
-	font-size: 13px;
-	font-weight: 600;
+.about-area .skill-list li:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: fontawesome;
+    content: "\f0da";
+    font-size: 14px;
 }
 
  /*================================================
