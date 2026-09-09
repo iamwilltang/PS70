@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="William Tang's personal website">
-        <meta name="keywords" content="global problems, resume, cv, portfolio, young person, William Tang, ambitious,personal resume, onepage, clean, modern">
+        <meta name="description" content="William Tang - physics and philosophy at Harvard. Experimental physics, hardware, and early-stage technology.">
+        <meta name="keywords" content="William Tang, Harvard, physics, philosophy, experimental physics, hardware, robotics, UAV, quantum computing">
         <meta name="author" content="William Tang">
 
         <title>William Tang - Personal Website</title>
@@ -76,9 +76,8 @@
                                 <li class="active"><a class="smooth-scroll" href="#home">Home</a></li>
                                 <li><a class="smooth-scroll" href="#about">About</a></li>
                                 <li><a class="smooth-scroll" href="#work">Work</a></li>
+                                <li><a class="smooth-scroll" href="#writing">Writing</a></li>
                                 <li><a class="smooth-scroll" href="#contact">Contact</a></li>
-                                <!-- Blog link added -->
-                                <li><a href="blog.html">Blog</a></li>
                                 <!-- PS70 link added -->
                                 <li><a href="ps70.html">PS70</a></li>
                             </ul>
@@ -90,7 +89,7 @@
         </header>
         <!--===== END HEADER AREA ======-->
 
-        <!--======= WELCOME AREA =======-->
+        <!--===== WELCOME AREA =====-->
         <div id="home" class="welcome-area" data-stellar-background-ratio="0.6" style="background-image: url(assets/img/main3-bg.jpg?v=2);">
            <div class="welcome-table">
                <div class="welcome-cell">
@@ -99,7 +98,8 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="welcome-text">
                                   <h1 class="theme-color">William Tang</h1>
-                                   <div class="element"></div>
+                                  <p class="hero-sub">Physics &amp; Philosophy @ Harvard</p>
+                                  <p class="hero-line">Experimental physics, hardware, and early-stage technology.</p>
                                 </div>
                                 <div class="home-arrow">
                                     <a href="#about" class="smooth-scroll"><i class="fa fa-angle-double-down"></i></a>
@@ -111,57 +111,28 @@
             </div>
         </div>
         <!--===== END WELCOME AREA =====-->
-        
+
         <!--===== ABOUT AREA =====-->
         <div id="about" class="about-area section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
                        <div class="author-image">
-                            <img src="assets/img/author.jpg" alt="Author Image"> <!--=== about image ===-->
+                            <img src="assets/img/author.jpg" alt="William Tang">
                         </div>
                     </div>
 
                     <div class="col-md-7">
-                        <div class="tab" role="tabpanel">
-                            <ul class="nav nav-tabs" role="tablist"> <!-- Nav tabs -->
-                                <li role="presentation" class="active"><a href="#Section1" role="tab" data-toggle="tab">About</a></li>
-                                <li role="presentation"><a href="#Section2" role="tab" data-toggle="tab">Skills</a></li>
+                        <div class="about-body">
+                            <p>I'm a junior at Harvard studying physics and philosophy. I like building hardware, running experiments, and meeting people working on ambitious technical problems. Recently, that's meant quantum computing, UAVs, and aerospace. Outside of that, I box, sing, and read.</p>
+
+                            <p class="tools-line">Python &middot; C &middot; Java &middot; ESP32 / Arduino &middot; SolidWorks &middot; Fusion 360 &middot; Git</p>
+
+                            <ul class="social-links"> <!--=== social-links ===-->
+                                <li><a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn Profile"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://twitter.com/WilliamxTang" target="_blank" rel="noopener noreferrer" aria-label="My Twitter Profile"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/iamwilltang/" target="_blank" rel="noopener noreferrer" aria-label="My Instagram Page"><i class="fa fa-instagram"></i></a></li>
                             </ul>
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade in active" id="Section1"> <!-- Single Tab -->
-                                    <h4 class="about-heading">I'm a Harvard junior interested in <span>building technology</span> and <span>understanding how the world works</span></h4>
-                                    <p>I study physics and philosophy and work across experimental research, aerospace, robotics, and emerging technology. I'm especially drawn to problems where first-principles reasoning has to survive contact with the real world.</p>
-                                    <p>Outside of work, I box, sing with the Harvard Glee Club, and read broadly in philosophy and history.</p>
-                                    <p>This site is a collection of projects I've built, research I've worked on, and ideas I've explored. Feel free to reach out through any of the platforms below:</p>
-                                    <ul class="social-links"> <!--=== social-links ===-->
-                                        <li><a href="https://www.instagram.com/iamwilltang/" target="_blank" rel="noopener noreferrer" aria-label="My Instagram Page"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="https://twitter.com/WilliamxTang" target="_blank" rel="noopener noreferrer" aria-label="My Twitter Profile"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn Profile"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="Section2"> <!-- Single Tab -->
-                                    <div class="skill-group"> <!-- Skill Group -->
-                                        <h4 class="skill-group-title">Technical</h4>
-                                        <ul class="skill-list">
-                                            <li>Python, C, Java</li>
-                                            <li>ESP32 / Arduino</li>
-                                            <li>SolidWorks, Fusion 360</li>
-                                            <li>Optical alignment &amp; experimental instrumentation</li>
-                                            <li>Data analysis &amp; automation</li>
-                                            <li>Electronics / UAV integration</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-group"> <!-- Skill Group -->
-                                        <h4 class="skill-group-title">Other</h4>
-                                        <ul class="skill-list">
-                                            <li>Public speaking &amp; debate</li>
-                                            <li>Research &amp; technical writing</li>
-                                            <li>Piano</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div> <!--/.row-->
@@ -169,376 +140,190 @@
         </div>
         <!--===== END ABOUT AREA =====-->
 
-         <!--====== WORK AREA ======-->
+        <!--====== WORK AREA ======-->
         <div id="work" class="work-area section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="section-title">
-                           <h2>Projects</h2>
-                           <p>Here are some things I've built:</p>
-                       </div>
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2>Selected Work</h2>
+                        </div>
                     </div>
                 </div> <!--/.row-->
-                
-                <div class="row">
-                    <ul class="work-list text-center">
-                        <li class="filter" data-filter="all">all</li>
-                        <li class="filter" data-filter=".writing">writing</li>
-                        <li class="filter" data-filter=".consulting">consulting</li>
-                        <li class="filter" data-filter=".technical">technical</li>
-                    </ul>
-                </div> <!--/.row-->
-                
-                <div class="work-inner">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix writing"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/1.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>A Review of Bell's Theorem: Quantum Physics</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal1"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix writing"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/2.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>Everdrop: Clean Water from Waste</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal2"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix technical"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/3.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>Revenge on Umbridge</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal3"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix writing"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/4.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>Why Blockchain is the Future</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal4"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix consulting"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/5.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                               <h4>IKEA Consultation Deck</h4>
-                                               <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal5"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix technical"> <!-- Single Work -->
-                            <div class="single-work">
-                                <img src="assets/img/work/6.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>WiTricity Patent Proposal</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal6"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-12">
-                            <!-- Work Modal One  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">A Review of Bell's Theorem: Quantum Physics</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A short review article highlighting why quantum physics violates the classical principal of locality.</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://medium.com/@williamxtang/the-price-of-locality-a-review-of-bells-theorem-a320ea179a50"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Article
-                                                    </a>
-                                            </p>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-                            <!-- Work Modal Two  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal2">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Everdrop: Clean Water from Waste</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A paper outlining a proposal of a home water system that turns wastewater into activated carbon.</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://medium.com/@williamxtang/everdrop-clean-water-from-waste-18a6778ccad0"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Article
-                                                    </a>
-                                            </p>                                          
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-                            <!-- Work Modal Three  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal3">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Revenge on Umbridge</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A Harry Potter-themed NFT browser game for you to take revenge on Umbridge!</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://medium.com/@williamxtang/revenge-on-umbridge-8a228fe9b538"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Article
-                                                    </a>
-                                            </p>                                          
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-                            <!-- Work Modal Four  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal4">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Why Blockchain is the Future</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A younger, more naive version of me thought blockchain could change the world. Little did he know...</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://medium.com/@williamxtang/why-blockchain-is-the-future-165315cb73de"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Article
-                                                    </a>
-                                            </p>                                          
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-                            <!-- Work Modal Five  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal5">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">IKEA Consultation Deck</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A recommendation to IKEA executive team to increase accessibility and sustainability. Implemented in Delft (google Sunrider bikes IKEA).</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FO0gYwnZSVkheCPfObuNIkwdNqLu2%2FIKEA%20Challenge%20Deck.pdf?alt=media&token=37693967-be67-4cd7-9975-2644f71326ce"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Slides
-                                                    </a>
-                                            </p>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-                            <!-- Work Modal Six  -->
-                            <div  tabindex="0" class="modal fade" id="projectModal6">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">WiTricity Patent Proposal</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>A proposal for a patent that WiTricity could explore that promises 7x their current wireless power transfer through magnetic resonance coupling and DD coils.</p>
-                                            <p>
-                                                <b>Project Link:</b>
-                                                    <a
-                                                    href="https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FO0gYwnZSVkheCPfObuNIkwdNqLu2%2FWiTricity%20Patent%20Proposal.pdf?alt=media&token=384a68b5-c1d9-449c-9e65-bdbebba4096d"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    >
-                                                    Slides
-                                                    </a>
-                                            </p>                                        
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                            <!-- End Work Modal  -->
-                            
-					   </div>						
-                    </div> <!--/.row-->
-                </div>
-            </div><!--/.container-->
-        </div>
-        <!--====== END WORK AREA ======-->
 
-         <!--====== CONTACT INFO AREA ======-->
-        <div id="contact" class="contact-info-area section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="section-title">
-                       <h2>Contact Me</h2>
-                       </div>
+                <div class="row project-row">
+                    <!-- Semeghini Lab -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="project-card">
+                            <a class="project-media" href="#" data-toggle="modal" data-target="#projectSemeghini"
+                               style="background-image: url(assets/img/work/semeghini-bench.jpg);" aria-label="Beam-steering test bench, technical details"></a>
+                            <div class="project-body">
+                                <span class="project-meta">Semeghini Group &middot; HCRP &middot; 2025&ndash;present</span>
+                                <h3 class="project-title">Picking the mirror that moves single atoms</h3>
+                                <p>Optical tweezers hold neutral atoms in a laser beam and move them by steering that beam, so the mirror doing the steering sets how stable the whole thing is. I built the bench that measured it, characterized three galvanometer mirrors, and wrote the Python that generated the waveforms and computed the stability metrics. The one I selected holds to under 15 &micro;rad of DC jitter and settles in about 5 ms.</p>
+                                <a href="#" class="project-link" data-toggle="modal" data-target="#projectSemeghini">Technical details</a>
+                            </div>
+                        </div>
                     </div>
-                </div> <!--/.row-->
-                
-                <div class="row">
-                    <div class="col-md-7">
-                          <div class="contact-form">
-                             <form id="contact-form" method="post" action="contact.php"> <!-- Start Contact From -->
-                             <div class="messages"></div>
-                                <div class="controls">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <i class="fa fa-user-o"></i>
-                                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Name*" required="required" data-error="Name is required.">
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <i class="fa fa-envelope-o"></i>
-                                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email*" required="required" data-error="Valid email is required.">
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <i class="fa fa-question-circle-o"></i>
-                                                <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject*" required="required" data-error="Subject is required.">
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <i class="fa fa-comment-o"></i>
-                                                <textarea id="form_message" name="message" class="form-control" placeholder="Message*" rows="7" required="required" data-error="Please,leave us a message."></textarea>
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input type="submit" class="btn btn-effect btn-sent" value="Send message">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form> <!-- End Contact From -->
-                          </div>
-                     </div>
-                    
-                    <div class="col-md-5">
-                        <div class="single-info"> <!-- Single Info -->
-                            <div class="info-icon">
-                                <i class="fa fa-rocket"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>My Location:</h5>
-                                <p>Cambridge, Massachusetts</p>
+
+                    <!-- HUAC UAV -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="project-card">
+                            <a class="project-media" href="#" data-toggle="modal" data-target="#projectUAV"
+                               style="background-image: url(assets/img/work/uav-build.jpg);" aria-label="Custom UAV, technical details"></a>
+                            <div class="project-body">
+                                <span class="project-meta">Harvard Undergraduate Aerospace Collective &middot; UAV Team &middot; 2025&ndash;present</span>
+                                <h3 class="project-title">A UAV built from scratch</h3>
+                                <p>Co-founded the UAV team inside HUAC and lead power and controls across a 10+ engineer build. Flight controller and ESC integration, dual-battery power design, telemetry, and the bench and flight testing that tells us what to fix next.</p>
+                                <a href="#" class="project-link" data-toggle="modal" data-target="#projectUAV">Flight test &amp; details</a>
                             </div>
                         </div>
-                        <div class="single-info"> <!-- Single Info -->
-                            <div class="info-icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>Phone Number:</h5>
-                                <p>Not available</p>
+                    </div>
+
+                    <!-- PS70 swarm robots -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="project-card">
+                            <a class="project-media" href="13_finalproject/index.html"
+                               style="background-image: url(13_finalproject/3-assembled-robots.jpg);" aria-label="Three autonomous robots, full write-up"></a>
+                            <div class="project-body">
+                                <span class="project-meta">Harvard PS70 &middot; Digital Fabrication &middot; 2026</span>
+                                <h3 class="project-title">Three robots that chase each other by radio alone</h3>
+                                <p>Three identical ESP32 robots on chassis I designed and printed. Each listens for one other robot's beacon, reads the per-packet signal strength, and steers up the gradient — A chases B, B chases C, C chases A. No cameras, no external tracking, no central coordinator.</p>
+                                <a href="13_finalproject/index.html" class="project-link">Full write-up</a>
                             </div>
                         </div>
-                        <div class="single-info"> <!-- Single Info -->
-                            <div class="info-icon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>Email Address:</h5>
-                                <p>williamtang@college.harvard.edu</p>
+                    </div>
+
+                    <!-- SEDS CubeSat -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="project-card">
+                            <a class="project-media" href="#" data-toggle="modal" data-target="#projectCubeSat"
+                               style="background-image: url(assets/img/work/cubesat-actuator.jpg);" aria-label="Shape-memory actuator, technical details"></a>
+                            <div class="project-body">
+                                <span class="project-meta">Harvard Undergraduate Aerospace Collective &middot; Satellite Team &middot; 2024&ndash;2026</span>
+                                <h3 class="project-title">A satellite solar array that moves without a motor</h3>
+                                <p>HUCSat's payload tests whether nitinol springs can tilt a solar platform toward the sun using nothing but heat — no motors, no gearboxes. I designed a spring actuator for the deployment mechanism in SolidWorks and tested the built part. Selected by NASA's CubeSat Launch Initiative; it deployed from the ISS in April 2026.</p>
+                                <a href="#" class="project-link" data-toggle="modal" data-target="#projectCubeSat">Technical details</a>
                             </div>
                         </div>
                     </div>
                 </div> <!--/.row-->
             </div> <!--/.container-->
+
+            <!-- ===== Project modals ===== -->
+            <div tabindex="0" class="modal fade" id="projectSemeghini">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Picking the mirror that moves single atoms</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>An optical tweezer traps a single neutral atom in a tightly focused laser beam. To move the atom, you move the beam — which means a galvanometer mirror is doing the steering, and its stability becomes the atom's stability. Datasheets do not tell you what you need to know here, so I built a bench to measure it.</p>
+                            <p>A position-sensing detector in the beam path turns where the spot lands into a voltage. I wrote Python drivers to generate the galvo waveforms, drive the mirrors through repeated moves, and compute stability metrics from the logged data: how far the beam drifts when it is supposed to be holding still, and how long it takes to settle after a step.</p>
+                            <p>I characterized three mirrors that way. The one I selected holds to under 15 &micro;rad of DC jitter with roughly 5 ms step-settling — good enough for stable atom transport. I then built and aligned the optical rig around it (fiber collimation, cabling, heat sinking) and integrated the galvo for transport of 500 &micro;m or more in the science plane.</p>
+                            <p>I led the galvo characterization subproject, defined the test protocols, and drove the mirror selection. Supported by an HCRP award, summer 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div tabindex="0" class="modal fade" id="projectUAV">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">A UAV built from scratch</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>I co-founded the UAV team inside the Harvard Undergraduate Aerospace Collective to build an aircraft from the ground up rather than assemble a kit. I led electrical: integrating the flight controller and ESCs, designing a dual-battery power system, getting telemetry working, and running the tests.</p>
+                            <div class="video-portrait">
+                                <iframe src="https://www.youtube.com/embed/nKyzyb48p_c" title="Early UAV flight test" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="video-caption">An early flight test. It ends in a crash — which is what early flight tests are for.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div tabindex="0" class="modal fade" id="projectCubeSat">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">A satellite solar array that moves without a motor</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>HUCSat is a 2U CubeSat — about the size of two stacked Rubik's cubes — selected by NASA's CubeSat Launch Initiative. Its payload asks a narrow question: can you point a solar panel in space using an alloy instead of a mechanism?</p>
+                            <p>Nitinol is a nickel-titanium alloy that can be trained to a shape and returns to it when heated. The payload puts four nitinol coils around a solar platform, one per edge, and heats them selectively. Heating them unevenly makes the contraction asymmetric, which rotates the platform toward the sun. There is no motor and no gearbox in the loop, and power is drawn only in the moments when it is actually moving.</p>
+                            <p>I designed the nitinol spring actuator system in SolidWorks and supported prototype testing — furnace heat-cycling to see whether the trained shape held up under repeated actuation — then documented the results. We characterized the payload in-house before delivering it to NASA.</p>
+                            <p>The satellite deployed from the International Space Station in April 2026.</p>
+                            <p>
+                                <a href="https://seas.harvard.edu/news/aerospace-collective-celebrates-satellite-launch" target="_blank" rel="noopener noreferrer">Harvard SEAS on the launch</a>
+                                <span class="contact-sep">&middot;</span>
+                                <a href="https://christopherprainito.com/projects/hucsat/" target="_blank" rel="noopener noreferrer">Chief engineer's project write-up</a>
+                            </p>
+                            <p class="video-caption">Satellite photograph by Christopher Prainito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--===== END CONTACT INFO AREA ======-->
+        <!--====== END WORK AREA ======-->
+
+        <!--====== WRITING AREA ======-->
+        <div id="writing" class="writing-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2>Research &amp; Writing</h2>
+                        </div>
+                    </div>
+                </div> <!--/.row-->
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="writing-item">
+                            <h3>Pairing cheap strike systems with expensive missiles</h3>
+                            <span class="writing-meta">Harvard Undergraduate Foreign Policy Initiative &middot; Policy Chair &middot; 2026</span>
+                            <p>A 35-page brief and executive deck written for Anduril on integrating low-cost strike systems with high-end missiles. We built a framework for evaluating that mix across cost-exchange ratios, production capacity, logistics, and survivability — the constraints that decide what can actually be fielded, rather than what performs best on paper. I led the eight-person team.</p>
+                        </div>
+
+                        <div class="writing-item">
+                            <h3>The Price of Locality: A Review of Bell's Theorem</h3>
+                            <span class="writing-meta">Essay</span>
+                            <p>Why quantum mechanics forces you to give up locality, written for people who have not taken the course.</p>
+                            <a href="https://medium.com/@williamxtang/the-price-of-locality-a-review-of-bells-theorem-a320ea179a50" target="_blank" rel="noopener noreferrer" class="project-link">Read it</a>
+                        </div>
+                    </div>
+                </div> <!--/.row-->
+            </div> <!--/.container-->
+        </div>
+        <!--====== END WRITING AREA ======-->
+
+        <!--====== CONTACT AREA ======-->
+        <div id="contact" class="contact-info-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 text-center">
+                        <div class="section-title">
+                            <h2>Get in touch</h2>
+                        </div>
+                        <p class="contact-cta">Building something interesting at Harvard or MIT? I'd love to hear about it.</p>
+                        <p class="contact-links">
+                            <a href="mailto:williamtang@college.harvard.edu">williamtang@college.harvard.edu</a>
+                            <span class="contact-sep">&middot;</span>
+                            <a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <span class="contact-sep">&middot;</span>
+                            <a href="ps70.html">PS70 coursework</a>
+                        </p>
+                        <p class="personal-line">Elsewhere: I ranked 10th nationally in Congressional debate and later ran the country's largest high-school debate team. These days I sing with the Harvard Glee Club and manage its touring, box, play piano, and read more philosophy than is strictly reasonable.</p>
+                    </div>
+                </div> <!--/.row-->
+            </div> <!--/.container-->
+        </div>
+        <!--===== END CONTACT AREA ======-->
 
         <!--====== FOOTER AREA ======-->
         <footer class="footer">
@@ -556,9 +341,6 @@
         <!--== plugins js ==-->
         <script src="assets/js/plugins.js"></script>
         
-        <!--== typed js ==-->
-        <script src="assets/js/typed.js"></script>
-        
         <!--== stellar js ==-->
         <script src="assets/js/jquery.stellar.min.js"></script>
         
@@ -570,15 +352,6 @@
         
          <!--== wow js ==-->
         <script src="assets/js/wow.min.js"></script>
-        
-         <!--== validator js ==-->
-        <script src="assets/js/validator.min.js"></script>
-        
-         <!--== mixitup js ==-->
-        <script src="assets/js/jquery.mixitup.js"></script>
-        
-         <!--== contact js ==-->
-        <script src="assets/js/contact.js"></script>
         
          <!--== main js ==-->
         <script src="assets/js/main.js"></script>

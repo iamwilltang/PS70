@@ -333,7 +333,7 @@ a{
  .welcome-text {
   text-align: center;
   gap: 0.5em;
-  padding-top: 260px;
+  padding-top: 314px;
 }
  .welcome-text h1 {
     display: block;
@@ -343,12 +343,19 @@ a{
     font-weight: 900;
     line-height: 1;
  }
- .welcome-text .element,
- .welcome-text .typed-cursor {
-    display: inline-block !important; 
-    font-size: 28px;
+ .welcome-text .hero-sub {
+    margin: 14px 0 0;
+    font-size: 24px;
+    line-height: 34px;
     font-weight: 300;
     color: #fff;
+}
+ .welcome-text .hero-line {
+    margin: 6px 0 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.82);
 }
  .welcome-area .home-arrow {
      text-align: center;
@@ -534,120 +541,182 @@ h4.about-heading {
  .work-area {
         background-color: #f7f7f7;
     }
- .work-inner .mix {
-     display: none;
- }
- ul.work-list {
-     list-style: outside none none;
-     margin-bottom: 20px;
-     padding: 0;
- }
- ul.work-list li {
-     cursor: pointer;
-     display: inline-block;
-     padding: 5px;
-     font-size: 14px;
-     text-transform: uppercase;
-     -webkit-transition: 0.4s;
-     transition: 0.4s;
- }
- .single-work {
-     position: relative;
-     overflow: hidden;
-     margin-bottom: 30px;
- }
- .single-work img {
-     -webkit-transform: scale(1.15);
-     transform: scale(1.15);
-     -webkit-transition: all 0.4s ease 0s;
-     transition: all 0.4s ease 0s;
- }
- .single-work:hover img {
-     -webkit-transform: scale(1);
-     transform: scale(1);
- }
- .item-hover {
-     padding: 30px;
-     height: 100%;
-     left: 0;
-     position: absolute;
-     top: 0;
-     width: 100%;
-     -webkit-transition: 0.4s;
-     transition: 0.4s;
-     z-index: 1;
-     opacity: 0;
-     filter: opacity(0);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-     -webkit-transition: 0.6s;
-     transition: 0.6s;
- }
- .item-hover:before {
-     position: absolute;
-     content: "";
-     width: 100%;
-     height: 100%;
-     top: 0;
-     left: 0;
-     background: #000;
-     opacity: 0;
-     filter: opacity(0);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-     visibility: hidden;
-     z-index: -1;
-     -webkit-transition: 0.4s;
-     transition: 0.4s;
- }
- .single-work:hover .item-hover:before {
-     opacity: 0.7;
-     filter: opacity(0.7);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-     visibility: visible;
- }
- .single-work:hover .item-hover {
-     opacity: 1;
-     filter: opacity(1);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
- }
- .work-table {
-     display: table;
-     height: 100%;
-     text-align: center;
-     width: 100%;
- }
- .work-tablecell {
-     display: table-cell;
-     vertical-align: middle;
- }
- .hover-content h4,
- .hover-content p {
-     color: #fff;
-     margin: 0;
- }
- .hover-content h4 {
-     margin-bottom: 10px;
-     font-weight: 600;
-     font-size: 21px;
-     text-transform: capitalize;
- }
- .hover-content p {
-     font-weight: 400;
-     font-size: 14px;
- }
- .hover-content a {
-     display: inline-block;
-     font-size: 18px;
-     height: 45px;
-     line-height: 45px;
-     color: #fff;
-    margin-top: 10px;
-     text-align: center;
-     -webkit-transition: all 0.6s ease 0s;
-     transition: all 0.6s ease 0s;
-     width: 45px;
-     transition: 0.6s;
-     border-radius: 50%;
- }
+ /* --- Project cards --- */
+ /* Bootstrap 3 rows are floats, so cards in a row won't match height.
+    Flex just this row; the :before/:after clearfix would become flex
+    items, so switch it off here. */
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-row:before,
+.project-row:after {
+    display: none;
+}
+.project-row > div[class*="col-"] {
+    display: flex;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.project-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    transform: translateY(-3px);
+}
+.project-media {
+    display: block;
+    width: 100%;
+    padding-top: 62%;              /* aspect box; image comes from inline background-image */
+    background-color: #e9edf1;     /* shows through if the photo is missing */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.project-body {
+    flex: 1 1 auto;
+    padding: 28px 30px 32px;
+}
+.project-meta {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8a949e;
+    margin-bottom: 10px;
+}
+h3.project-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0 0 14px;
+    color: #222;
+}
+.project-body p {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+.project-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.project-link:hover,
+.project-link:focus {
+    text-decoration: none;
+}
+
+ /* --- Portrait (Shorts-style) video embed --- */
+.video-portrait {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 22px auto 10px;
+    padding-top: 177.78%;   /* 9:16 -- the Short is vertical */
+}
+.video-portrait iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.video-caption {
+    font-size: 14px;
+    line-height: 22px;
+    color: #777;
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+ /* --- About body --- */
+.about-body p {
+    font-size: 16px;
+    line-height: 30px;
+}
+.tools-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    color: #777;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid #e6e6e6;
+}
+
+ /* --- Research & writing --- */
+.writing-item {
+    padding: 26px 0;
+    border-bottom: 1px solid #ececec;
+}
+.writing-item:last-child {
+    border-bottom: none;
+}
+.writing-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #222;
+}
+.writing-meta {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8a949e;
+    margin-bottom: 12px;
+}
+.writing-item p {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+ /* --- Contact --- */
+.contact-cta {
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    margin-bottom: 26px;
+}
+.contact-links {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin-bottom: 34px;
+}
+.contact-links a {
+    border-bottom: 1px solid transparent;
+}
+.contact-links a:hover {
+    text-decoration: none;
+}
+.contact-sep {
+    color: #ccc;
+    margin: 0 12px;
+}
+.personal-line {
+    font-size: 15px;
+    line-height: 26px;
+    color: #888;
+    max-width: 620px;
+    margin: 0 auto;
+}
 .modal-content {
 	padding: 10px 30px;
 	border-radius: 0px;

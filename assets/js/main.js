@@ -52,21 +52,13 @@
         }
       resizeBackground();
         
-        /*======== Modal js ===========*/
-        $("#projectModal1, #projectModal2, #projectModal3, #projectModal4, #projectModal5, #projectModal6, #projectModal7, #projectModal8, #projectModal9").on('hidden.bs.modal', function (e) {
-            $("#projectModal1 iframe, #projectModal2 iframe, #projectModal3 iframe, #projectModal3 iframe, #projectModal4 iframe, #projectModal5 iframe, #projectModal6 iframe, #projectModal7 iframe, #projectModal8 iframe, #projectModal9 iframe").attr("src", $("projectModal1 iframe, #projectModal2 iframe, #projectModal3 iframe, #projectModal3 iframe, #projectModal4 iframe, #projectModal5 iframe, #projectModal6 iframe, #projectModal7 iframe, #projectModal8 iframe, #projectModal9 iframe").attr("src"));
-        });
-   
-        /*======== Intro typer ===========*/
-        var element = $(".element");
-        $(function() {
-            element.typed({
-                strings: ["Carpe Diem.", "Ad Astra Per Aspera.", "Ad Meliora."],
-                typeSpeed: 100,
-                loop: true,
+        /*======== Modal js -- reload iframes on close so video stops ===========*/
+        $('.modal').on('hidden.bs.modal', function () {
+            $(this).find('iframe').each(function () {
+                $(this).attr('src', $(this).attr('src'));
             });
         });
-        
+   
         /*======== Parallax js ===========*/
         $window.stellar({
             responsive: true,
@@ -85,9 +77,6 @@
  
         /*========   WOW js===========*/
         new WOW({ mobile: false }).init();
-    
-        /*======== jQuery mixItUp ===========*/
-        $('.work-inner').mixItUp();
     
     
 
