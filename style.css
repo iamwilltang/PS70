@@ -214,9 +214,9 @@ a{
      text-align: center;
  }
  .section-title h2 {
-     font-size: 45px;
+     font-size: 32px;
      margin-bottom: 5px;
-     letter-spacing: 2px;
+     letter-spacing: 0.5px;
      font-weight: 900;
  }
  .section-title p {
@@ -333,13 +333,13 @@ a{
  .welcome-text {
   text-align: center;
   gap: 0.5em;
-  padding-top: 280px;
+  padding-top: 259px;
 }
  .welcome-text h1 {
     display: block;
     text-transform: capitalize;
     margin: 0;
-    font-size: 85px;
+    font-size: 64px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: -1px;

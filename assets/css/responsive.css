@@ -18,9 +18,9 @@
         bottom: -220px;
     }
     .welcome-text h1{
-        font-size: 65px;
+        font-size: 48px;
     }
-    .typed-cursor, .element {
+    .hero-sub {
 	   font-size: 22px;
     }
     .about-area .tab {
@@ -129,9 +129,9 @@
         display: block;
     }
     .welcome-text h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
-    .typed-cursor, .element {
+    .hero-sub {
 	   font-size: 18px;
     }
     .welcome-area .home-arrow {
@@ -202,7 +202,7 @@
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .welcome-text h1 {
-        font-size: 50px;
+        font-size: 40px;
     }
     .mobile-menu-activated ul.nav.navbar-nav li a {
         padding: 10px 5px;
