@@ -333,7 +333,7 @@ a{
  .welcome-text {
   text-align: center;
   gap: 0.5em;
-  padding-top: 314px;
+  padding-top: 280px;
 }
  .welcome-text h1 {
     display: block;
@@ -342,6 +342,8 @@ a{
     font-size: 85px;
     font-weight: 900;
     line-height: 1;
+    letter-spacing: -1px;
+    color: #fff;
  }
  .welcome-text .hero-sub {
     margin: 14px 0 0;
@@ -618,6 +620,48 @@ h3.project-title {
     text-decoration: none;
 }
 
+ /* --- Measured-data table inside a project modal --- */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0 8px;
+    font-size: 14px;
+}
+.spec-table th {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8a949e;
+    text-align: right;
+    padding: 0 0 8px 14px;
+    border-bottom: 1px solid #ddd;
+}
+.spec-table th:first-child {
+    text-align: left;
+    padding-left: 0;
+}
+.spec-table td {
+    padding: 11px 0 11px 14px;
+    text-align: right;
+    border-bottom: 1px solid #f0f0f0;
+    font-variant-numeric: tabular-nums;
+}
+.spec-table td:first-child {
+    text-align: left;
+    padding-left: 0;
+}
+.spec-table tr.spec-selected td {
+    font-weight: 600;
+    color: #222;
+}
+.spec-note {
+    font-size: 13px;
+    color: #8a949e;
+    margin-bottom: 22px;
+}
+
  /* --- Portrait (Shorts-style) video embed --- */
 .video-portrait {
     position: relative;
@@ -644,11 +688,33 @@ h3.project-title {
 }
 
  /* --- About body --- */
-.about-body p {
-    font-size: 16px;
-    line-height: 30px;
+ /* Short bio next to a tall portrait reads as empty space, so cap the
+    photo and centre the two columns against each other. */
+.about-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
-.tools-line {
+.about-row:before,
+.about-row:after {
+    display: none;
+}
+.author-image img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+.about-body p {
+    font-size: 17px;
+    line-height: 32px;
+}
+.about-body p:first-child {
+    margin-bottom: 0;
+}
+.about-body .tools-line {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     letter-spacing: 0.6px;
@@ -818,8 +884,28 @@ h3.project-title {
  /*================================================
         8 CONTACT INFO AREA
 ==================================================*/
+ /* Dark closing section -- separates it from the white Writing section
+    above and carries into the dark footer below. */
 .contact-info-area {
-     background-color: #ffffff;
+     background-color: #1b1f24;
+ }
+.contact-info-area .section-title h2 {
+     color: #fff;
+ }
+.contact-info-area .contact-cta {
+     color: #f2f5f8;
+ }
+.contact-info-area .contact-links a {
+     color: #5cc0ff;
+ }
+.contact-info-area .contact-links a:hover {
+     color: #fff;
+ }
+.contact-info-area .contact-sep {
+     color: #4a5560;
+ }
+.contact-info-area .personal-line {
+     color: #98a3ae;
  }
 .contact-form .form-group {
      margin-bottom: 15px;
@@ -1189,3 +1275,15 @@ h3.comment-form-title{
      color: #fff;
      margin: 0px;
  }
+.writing-note {
+    font-size: 13px;
+    color: #8a949e;
+    font-style: italic;
+}
+
+/* Project modals carry real technical detail; 600px is too narrow for it. */
+@media (min-width: 992px) {
+    .work-area .modal-dialog {
+        width: 740px;
+    }
+}

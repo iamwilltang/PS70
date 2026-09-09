@@ -8,8 +8,19 @@
         <meta name="keywords" content="William Tang, Harvard, physics, philosophy, experimental physics, hardware, robotics, UAV, quantum computing">
         <meta name="author" content="William Tang">
 
-        <title>William Tang - Personal Website</title>
-        
+        <title>William Tang — Physics &amp; Philosophy at Harvard</title>
+
+        <!-- Link previews (LinkedIn, X, Slack, iMessage) -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="William Tang — Physics &amp; Philosophy at Harvard">
+        <meta property="og:description" content="Experimental physics, hardware, and early-stage technology. Optical tweezers, UAVs, swarm robots, and a CubeSat payload that flew.">
+        <meta property="og:url" content="https://iamwilltang.github.io/PS70/">
+        <meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/og-card.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="William Tang — Physics &amp; Philosophy at Harvard">
+        <meta name="twitter:description" content="Experimental physics, hardware, and early-stage technology.">
+        <meta name="twitter:image" content="https://iamwilltang.github.io/PS70/assets/img/og-card.jpg">
+
         <!-- Favicon -->
         <link rel="shortcut icon" href="assets/img/favicon.JPG" type="image/jpeg">
 
@@ -78,8 +89,8 @@
                                 <li><a class="smooth-scroll" href="#work">Work</a></li>
                                 <li><a class="smooth-scroll" href="#writing">Writing</a></li>
                                 <li><a class="smooth-scroll" href="#contact">Contact</a></li>
-                                <!-- PS70 link added -->
-                                <li><a href="ps70.html">PS70</a></li>
+                                <!-- Fabrication archive (PS70 coursework) -->
+                                <li><a href="ps70.html">Fabrication</a></li>
                             </ul>
                         </div>
                         </nav>
@@ -97,9 +108,8 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="welcome-text">
-                                  <h1 class="theme-color">William Tang</h1>
+                                  <h1>William Tang</h1>
                                   <p class="hero-sub">Physics &amp; Philosophy @ Harvard</p>
-                                  <p class="hero-line">Experimental physics, hardware, and early-stage technology.</p>
                                 </div>
                                 <div class="home-arrow">
                                     <a href="#about" class="smooth-scroll"><i class="fa fa-angle-double-down"></i></a>
@@ -115,14 +125,14 @@
         <!--===== ABOUT AREA =====-->
         <div id="about" class="about-area section-padding">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
+                <div class="row about-row">
+                    <div class="col-md-4 col-sm-4">
                        <div class="author-image">
                             <img src="assets/img/author.jpg" alt="William Tang">
                         </div>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-7 col-md-offset-1 col-sm-8">
                         <div class="about-body">
                             <p>I'm a junior at Harvard studying physics and philosophy. I like building hardware, running experiments, and meeting people working on ambitious technical problems. Recently, that's meant quantum computing, UAVs, and aerospace. Outside of that, I box, sing, and read.</p>
 
@@ -166,6 +176,19 @@
                         </div>
                     </div>
 
+                    <!-- SEDS CubeSat -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="project-card">
+                            <a class="project-media" href="#" data-toggle="modal" data-target="#projectCubeSat"
+                               style="background-image: url(assets/img/work/cubesat-actuator.jpg);" aria-label="Shape-memory actuator, technical details"></a>
+                            <div class="project-body">
+                                <span class="project-meta">Harvard Undergraduate Aerospace Collective &middot; Satellite Team &middot; 2024&ndash;2026</span>
+                                <h3 class="project-title">A satellite solar array that moves without a motor</h3>
+                                <p>HUCSat's payload tests whether nitinol springs can tilt a solar platform toward the sun using nothing but heat — no motors, no gearboxes. I designed a spring actuator for the deployment mechanism in SolidWorks and tested the built part. Selected by NASA's CubeSat Launch Initiative; it deployed from the ISS in April 2026.</p>
+                                <a href="#" class="project-link" data-toggle="modal" data-target="#projectCubeSat">Technical details</a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- HUAC UAV -->
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="project-card">
@@ -174,7 +197,7 @@
                             <div class="project-body">
                                 <span class="project-meta">Harvard Undergraduate Aerospace Collective &middot; UAV Team &middot; 2025&ndash;present</span>
                                 <h3 class="project-title">A UAV built from scratch</h3>
-                                <p>Co-founded the UAV team inside HUAC and lead power and controls across a 10+ engineer build. Flight controller and ESC integration, dual-battery power design, telemetry, and the bench and flight testing that tells us what to fix next.</p>
+                                <p>Co-founded the UAV team inside HUAC and lead power and controls across a 10+ engineer build, sponsored by Zipline. Flight controller and ESC integration, dual-battery power design, telemetry, and the bench and flight testing that tells us what to fix next.</p>
                                 <a href="#" class="project-link" data-toggle="modal" data-target="#projectUAV">Flight test &amp; details</a>
                             </div>
                         </div>
@@ -194,19 +217,6 @@
                         </div>
                     </div>
 
-                    <!-- SEDS CubeSat -->
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="project-card">
-                            <a class="project-media" href="#" data-toggle="modal" data-target="#projectCubeSat"
-                               style="background-image: url(assets/img/work/cubesat-actuator.jpg);" aria-label="Shape-memory actuator, technical details"></a>
-                            <div class="project-body">
-                                <span class="project-meta">Harvard Undergraduate Aerospace Collective &middot; Satellite Team &middot; 2024&ndash;2026</span>
-                                <h3 class="project-title">A satellite solar array that moves without a motor</h3>
-                                <p>HUCSat's payload tests whether nitinol springs can tilt a solar platform toward the sun using nothing but heat — no motors, no gearboxes. I designed a spring actuator for the deployment mechanism in SolidWorks and tested the built part. Selected by NASA's CubeSat Launch Initiative; it deployed from the ISS in April 2026.</p>
-                                <a href="#" class="project-link" data-toggle="modal" data-target="#projectCubeSat">Technical details</a>
-                            </div>
-                        </div>
-                    </div>
                 </div> <!--/.row-->
             </div> <!--/.container-->
 
@@ -219,10 +229,22 @@
                             <h4 class="modal-title">Picking the mirror that moves single atoms</h4>
                         </div>
                         <div class="modal-body">
-                            <p>An optical tweezer traps a single neutral atom in a tightly focused laser beam. To move the atom, you move the beam — which means a galvanometer mirror is doing the steering, and its stability becomes the atom's stability. Datasheets do not tell you what you need to know here, so I built a bench to measure it.</p>
-                            <p>A position-sensing detector in the beam path turns where the spot lands into a voltage. I wrote Python drivers to generate the galvo waveforms, drive the mirrors through repeated moves, and compute stability metrics from the logged data: how far the beam drifts when it is supposed to be holding still, and how long it takes to settle after a step.</p>
-                            <p>I characterized three mirrors that way. The one I selected holds to under 15 &micro;rad of DC jitter with roughly 5 ms step-settling — good enough for stable atom transport. I then built and aligned the optical rig around it (fiber collimation, cabling, heat sinking) and integrated the galvo for transport of 500 &micro;m or more in the science plane.</p>
-                            <p>I led the galvo characterization subproject, defined the test protocols, and drove the mirror selection. Supported by an HCRP award, summer 2025.</p>
+                            <p>An optical tweezer traps a single neutral atom in a tightly focused laser beam. To move the atom, you move the beam — so a galvanometer mirror does the steering, and the mirror's stability becomes the atom's stability. Datasheets do not answer that question, so I built a bench to measure it: a quadrant photodiode at the end of a 300 mm propagation path, turning where the spot lands into a voltage I could log.</p>
+                            <p>I calibrated voltage-to-angle for three candidates, then characterized each one with the mirror off, holding at DC, and under square-wave drive at 100 Hz, 1 kHz and 10 kHz. A single-element photodiode ran in parallel to confirm the differences were real and not artifacts of the quadrant-photodiode processing.</p>
+                            <table class="spec-table">
+                                <thead>
+                                    <tr><th>Galvo</th><th>DC jitter</th><th>Overshoot</th><th>Settling</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="spec-selected"><td>Scanlab dynAXIS&nbsp;421</td><td>&lt; 15 &micro;rad</td><td>~400 &micro;rad</td><td>~5 ms</td></tr>
+                                    <tr><td>Thorlabs QS15Y</td><td>~50 &micro;rad</td><td>~600 &micro;rad</td><td>~30 ms</td></tr>
+                                    <tr><td>Cambridge 6215H</td><td>~150 &micro;rad</td><td>~4000 &micro;rad</td><td>~0.3 ms</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="spec-note">Overshoot and settling measured on a 10 Hz, 20 mrad peak-to-peak square step.</p>
+                            <p>The Cambridge unit settles more than an order of magnitude faster than anything else in the table, which makes it the obvious pick until you look at the other two columns — 150 &micro;rad of jitter and 4 mrad of overshoot would throw an atom out of the trap long before the speed helped. I selected the Scanlab, then built and aligned the optical rig around it (fiber collimation, cabling, heat sinking) and integrated it for transport of 500 &micro;m or more in the science plane, using the objective's 41.3 mrad ↔ 400 &micro;m mapping to convert commanded angle into real displacement.</p>
+                            <p>Two things I did not expect. A signal generator was injecting a 24 kHz spur into the drive, which vanished once I moved to a DAC. And ramping the steps rather than stepping hard cut jitter from roughly 900 to 500 &micro;rad at 100 Hz — but each added step lengthens the ramp, and the firmware froze past about 660 of them, so the operating envelope is a genuine trade rather than a setting to max out.</p>
+                            <p>I led the galvo characterization subproject, defined the test protocols, and drove the selection. Supported by an HCRP award, summer 2025.</p>
                         </div>
                     </div>
                 </div>
@@ -236,7 +258,8 @@
                             <h4 class="modal-title">A UAV built from scratch</h4>
                         </div>
                         <div class="modal-body">
-                            <p>I co-founded the UAV team inside the Harvard Undergraduate Aerospace Collective to build an aircraft from the ground up rather than assemble a kit. I led electrical: integrating the flight controller and ESCs, designing a dual-battery power system, getting telemetry working, and running the tests.</p>
+                            <p>The Harvard Undergraduate Aerospace Collective and its UAV team were founded at the same time; I co-founded the UAV team, which is where I have spent my time since. The goal was to build an aircraft from the ground up rather than assemble a kit. The programme is sponsored by Zipline, whose markings the airframe carries.</p>
+                            <p>I lead power and controls across a team of more than ten engineers: flight controller and ESC integration, a dual-battery power architecture, telemetry, and the safety-critical side of the electrical design. Then the testing, which is where you find out what you actually built.</p>
                             <div class="video-portrait">
                                 <iframe src="https://www.youtube.com/embed/nKyzyb48p_c" title="Early UAV flight test" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -288,6 +311,7 @@
                             <h3>Pairing cheap strike systems with expensive missiles</h3>
                             <span class="writing-meta">Harvard Undergraduate Foreign Policy Initiative &middot; Policy Chair &middot; 2026</span>
                             <p>A 35-page brief and executive deck written for Anduril on integrating low-cost strike systems with high-end missiles. We built a framework for evaluating that mix across cost-exchange ratios, production capacity, logistics, and survivability — the constraints that decide what can actually be fielded, rather than what performs best on paper. I led the eight-person team.</p>
+                            <p class="writing-note">Under NDA, so not published here.</p>
                         </div>
 
                         <div class="writing-item">
@@ -316,9 +340,9 @@
                             <span class="contact-sep">&middot;</span>
                             <a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                             <span class="contact-sep">&middot;</span>
-                            <a href="ps70.html">PS70 coursework</a>
+                            <a href="ps70.html">Fabrication archive</a>
                         </p>
-                        <p class="personal-line">Elsewhere: I ranked 10th nationally in Congressional debate and later ran the country's largest high-school debate team. These days I sing with the Harvard Glee Club and manage its touring, box, play piano, and read more philosophy than is strictly reasonable.</p>
+                        <p class="personal-line">Elsewhere: I ranked 10th nationally in Congressional debate and later ran the country's largest high-school debate team. These days I sing with the Harvard Glee Club, where I am CFO and manage a $130k+ annual budget. I also box, play piano, and read more philosophy than is strictly reasonable.</p>
                     </div>
                 </div> <!--/.row-->
             </div> <!--/.container-->
