@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 7: Electronic Outputs — Final Project MVP | William Tang</title>
+<meta name="description" content="The deliverable this week was a Minimum Viable Product for the final project — enough of the system actually running, end-to-end, that the path to the…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week 7: Electronic Outputs — Final Project MVP | William Tang">
+<meta property="og:description" content="The deliverable this week was a Minimum Viable Product for the final project — enough of the system actually running, end-to-end, that the path to the…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/07_outputs/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/week07.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Week 7: Electronic Outputs — Final Project MVP</h3>
+<h1>Week 7: Electronic Outputs — Final Project MVP</h1>
 
 <p class = "margin"></p>
 
@@ -37,7 +44,7 @@ The deliverable this week was a Minimum Viable Product for the final project —
 <p class = "margin"></p>
 
 
-<h4>The MVP setup</h4>
+<h2>The MVP setup</h2>
 <p class = "margin"></p>
 
 I didn't have my own three robots built yet, so for the MVP I borrowed an existing two-wheeled robot from my TF Bobby. His robot uses a pair of <b>A4988</b> stepper drivers running bipolar stepper motors — different motor/driver pair than what I'll eventually use on my own final-project robots, but mechanically the same idea (differential drive). I dropped a XIAO ESP32-C3 onto the existing wiring, wrote some quick forward-only stepper code to confirm the steppers responded to my microcontroller, and recorded the result.
@@ -53,7 +60,7 @@ The forward-only sketch I wrote here was deliberately the simplest thing that co
 <p class = "margin"></p>
 
 
-<h4>The comms half (carried over from Week 4)</h4>
+<h2>The comms half (carried over from Week 4)</h2>
 <p class = "margin"></p>
 
 The radio side is the same three-sketch trio I built out for Week 4. I'm including them here as well so the MVP is self-contained on this page.
@@ -73,7 +80,7 @@ The radio side is the same three-sketch trio I built out for Week 4. I'm includi
 <p class = "margin"></p>
 
 
-<h4>Side experiment: my own (eventually scrapped) DC-motor robot</h4>
+<h2>Side experiment: my own (eventually scrapped) DC-motor robot</h2>
 <p class = "margin"></p>
 
 Alongside the MVP I was prototyping the drive electronics for the robot I planned to build myself — a custom differential drive on cheap DC gearmotors driven through an <b>L9110</b> dual H-bridge. The smoke-test sketch below cycles STOP → FORWARD → STOP → SPIN → STOP so I could confirm the wiring and direction sense before flashing the full follower on top of it.
@@ -165,7 +172,7 @@ This L9110 + DC plan didn't survive contact with the rest of the project — by 
 <p class = "margin"></p>
 
 
-<h4>What this MVP actually proved</h4>
+<h2>What this MVP actually proved</h2>
 <p class = "margin"></p>
 
 <ul>
@@ -191,6 +198,10 @@ This L9110 + DC plan didn't survive contact with the rest of the project — by 
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

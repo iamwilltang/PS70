@@ -19,10 +19,8 @@ NOTE: This is main stylesheet of the template.
 4. WELCOME AREA
 5. ABOUT AREA
 6. WORK AREA
-7. STAT AREA
-8. CONTACT INFO AREA
-9. BLOG AND SINGLE BLOG PAGE
-10. FOOTER AREA
+7. CONTACT AREA
+8. FOOTER AREA
 
 /*====================================================
             End table content 
@@ -95,9 +93,6 @@ a{
 }
  @keyframes preloader-failsafe {
      to { opacity: 0; visibility: hidden; }
-}
- .no-js #loader-wrapper {
-     display: none;
 }
  #loader {
      display: block;
@@ -381,7 +376,10 @@ a{
  .welcome-area .home-arrow a {
      font-size: 34px;
  }
- .welcome-area .home-arrow .fa {
+ .welcome-area .home-arrow svg {
+     width: 34px;
+     height: 34px;
+     fill: currentColor;
      display: inline-block;
      -webkit-transform-style: preserve-3d;
      transform-style: preserve-3d;
@@ -496,15 +494,24 @@ h4.about-heading {
     margin-right: 8px;
 }
 .social-links a {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 40px;
     height: 40px;
-    line-height: 40px;
 	border: 1px solid #444;
 	color: #444;
 	border-radius: 50%;
-	font-size: 16px;
     text-align: center;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+ /* Icons are inline SVG rather than an icon font -- three glyphs did not
+    justify shipping Font Awesome's stylesheet and five font files. */
+.social-links a svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    display: block;
 }
 .about-area .skill-group{
     margin-bottom: 38px;
@@ -818,73 +825,8 @@ h3.project-title {
     color: #444;
 }
 
- /*===============================================
-	    7. STAT AREA
-===============================================*/
- 
- .stat-area {
-     background-color: #fff;
- }
- .single-stat {
-     position: relative;
-	margin-top: 30px;
- }
-.single-stat .inner {
-	position: relative;
-	padding: 50px 15px 35px;
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-	border: 2px solid #444;
-	border-radius: 0px 0px 5px 5px;
-	border-top: none;
-}
-.single-stat .inner::after {
-	content: '';
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 30%;
-	border-bottom: 2px solid #444;
-}
-.single-stat .inner::before {
-	content: '';
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	width: 30%;
-	border-bottom: 2px solid #444;
-}
-.stat-icon-box {
-	position: absolute;
-	left: 50%;
-	top: -30px;
-	width: 40%;
-	height: 60px;
-	text-align: center;
-	line-height: 60px;
-	font-size: 45px;
-	color: #444;
-	margin-left: -20%;
-}
-.stat-icon-box i.fa{
-    margin: 0 auto;
-}
- .single-stat h2 {
-     font-size: 56px;
-     margin-bottom: 10px;
-     margin-top: 0px;
-     font-weight: 900;
- }
- .single-stat h3 {
-     font-size: 13px;
-     font-weight: 600;
-     text-transform: uppercase;
-     margin: 0;
- }
-
  /*================================================
-        8 CONTACT INFO AREA
+        7 CONTACT AREA
 ==================================================*/
  /* Dark closing section -- separates it from the white Writing section
     above and carries into the dark footer below. */
@@ -906,363 +848,10 @@ h3.project-title {
 .contact-info-area .contact-sep {
      color: #4a5560;
  }
-.contact-form .form-group {
-     margin-bottom: 15px;
-     position: relative;
-}
- .contact-form .form-group i.fa {
-     position: absolute;
-     top: 15px;
-     left: 0;
-     font-size: 16px;
-}
- .form-control {
-    padding: 12px 25px;
-     font-size: 16px;
-     height: auto;
-     box-shadow: none !important;
-     border-top: 0;
-     border-left: 0;
-     border-right: 0;
-     border-bottom: 2px solid #666;
-     border-radius: 0;
-    background-color: transparent;
- }
-.form-control:focus {
-     border-top: none;
-     border-left: none;
-     border-right: none;
-}
- textarea.form-control {
-     resize: vertical;
-     height: 130px;
- }
-.btn.btn-sent{
-    height: 45px;
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
-    color: #fff;
-    margin-top: 20px;
-    text-transform: capitalize;
-    transition: 0.4s;
-}
- .btn.disabled,
- .btn[disabled],
- fieldset[disabled] .btn {
-     box-shadow: none;
-     cursor: not-allowed;
-     opacity: 1;
-     filter: opacity(1);
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
- }
- .btn.btn-effect.disabled {
-     cursor: not-allowed;
- }
-.single-info {
-     position: relative;
-     padding: 25px 30px;
-     border: 1px solid #ddd;
-     margin-bottom: 15px;
-}
- .info-icon {
-     position: absolute;
-     top: 25px;
-     left: 30px;
-     width: 50px;
-     height: 50px;
-     font-size: 18px;
-     color: #fff;
-     text-align: center;
-     line-height: 50px;
-     border-radius: 50%;
-}
- .info-icon.fa{
-     font-size: 20px;
-}
-.single-info h5{
-    margin-bottom: 5px;
-    text-transform: capitalize;
-}
-.single-info p{
-    margin-bottom: 0;
-}
-.info-content {
-	padding-left: 70px;
-}
-
-/*================================================
-    9. BLOG AND SINGLE BLOG PAGE
-==================================================*/
-
-.breadcroumb-area{
-    padding: 120px 0 90px;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-}
-.breadcroumb-area:before{
-    background-color: #000;
-    content: "";
-    height: 100%;
-    left: 0;
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-}
-.breadcroumb-area h1 {
-    font-size: 46px;
-    color: #fff;
-    text-transform: capitalize;
-    font-weight: 700;
-    margin-top: 0;
-}
-.breadcroumb {
-    color: #fff;
-    font-size: 16px;
-}
-.breadcroumb a {
-    color: #fff;
-}
-.blog-content-area, .single-blog-area{
-    background-color: #f7f7f7;
-}
-.widget{
-    margin-bottom: 40px;
-}
-.widget {
-  padding: 20px;
-    background-color: #fff;
-}
-.search-form {
-    background-color: #f7f7f7;
-    border: none;
-    width: 100%;
-}
-.search-form input[type="search"] {
-    padding: 14px;
-    border: 0px solid;
-    background: transparent;
-    width: 80%;
-}
-.search-form button[type="submit"] {
-	border: 0px solid;
-	color: #fff;
-	float: right;
-	padding: 14px;
-	width: calc(100% - 80%);
-    transition: 0.4s;
-}
-.search-form button[type="submit"]:hover{
-    background-color: #222;
-    color: #fff;
-}
-.widget-title{
-    font-size: 22px;
-    margin-bottom: 20px;
-    margin-top: 0;
-    text-transform: capitalize;
-    font-weight: 600;
-}
-.widget ul {
-  list-style: outside none none;
-  margin: 0;
-  padding: 0;
-}
-.widget ul li{
-    line-height: 22px;
-}
-.widget.about-me p {
-	margin-top: 10px;
-	margin-bottom: 0;
-}
-.widget.category ul li, .widget.tags ul li{
-    margin-bottom: 8px
-}
-.widget.category ul{
-    padding-left: 15px;
-}
-.widget.category li{
-    position: relative;
-}
-.widget.category li:before{
-    position: absolute;
-    left: -15px;
-    top: 0;
-    font-family: fontawesome;
-    content: "\f0da";
-    font-size: 18px;
-}
-.widget a{
-    padding-bottom: 8px;
-    display: block;
-    transition: 0.3s;
-}
-.widget.category li a, .widget.recent-post li a{
-    color: #444;
-}
-.widget.tags li {
-    display: inline-block;
-}
-.widget.tags a {
-    background-color: #222;
-    color: #fff;
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    margin-right: 4px;
-    padding: 6px 13px;
-    transition: 0.4s;
-}
-.widget.tags a:hover{
-    color: #fff;
-}
-.widget.recent-post span {
-  display: block;
-  font-size: 13px;
-    color: #999;
-}
-.post-featured-content {
-  margin: 0;
-  max-height: 400px;
-  overflow: hidden;
-}
-.single-post, .single-post-details, .comment-list-area, .comment-form-wrap {
-	background-color: #fff;
-    padding: 30px;
-    margin-bottom: 50px;
-}
-.single-post h2, .single-post-details h2 {
-  margin: 20px 0 5px 0;
-    font-size: 24px;
-    font-weight: 600;
-    
-}
-.post-meta span {
-    font-size: 13px;
-    text-transform: uppercase;
-    margin-right: 15px;
-}
-.post-meta span i.fa{
-    margin-right: 4px;
-}
-.read-more-btn {
-  color: #fff;
-  display: inline-block;
-  padding: 7px 18px;
-    text-transform: capitalize;
-}
-.entry-content {
-  margin-top: 12px;
-}
-.pagination ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-}
-.pagination li {
-    display: inline-block;
-}
-.pagination li a {
-    background-color: #fff;
-    color: #444;
-  display: block;
-  font-size: 18px;
-  font-weight: 500;
-  height: 35px;
-  line-height: 34px;
-  margin-right: 4px;
-  text-align: center;
-  width: 35px;
-    transition: 0.3s;
-}
-
-.pagination{
-    margin: 0;
-}
-.pagination ul li:hover a, .pagination ul li.active a{
-    color: #fff;
-}
-
-.single-post-details blockquote {
-  font-size: 14px;
-  font-style: italic;
-    background-color: #f7f7f7;
-margin-top: 15px;
-margin-bottom: 15px;
-}
-
-.comments-area ul.comment-list {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-}
-.row.replay-area {
-  margin-left: 120px;
-  margin-top: 40px;
-}
-h3.comment-title {
-	margin-bottom: 30px;
-	font-weight: 600;
-	font-size: 21px;
-}
-h3.comment-form-title{
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-.comment-metadata h5 {
-    margin-bottom: 0;
-    font-weight: 600;
-}
-.comment-metadata p {
-    color: #777;
-    font-size: 12px;
-}
-.comment-reply-link {
-    font-weight: 600;
-}
-.comment-item {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-}
-.comment-item:last-child{
-    border-bottom: 0px solid;
-}
-
-.comment-form-wrap .form-control {
-    background-color: #f7f7f7;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    box-shadow: none;
-    height: 45px;
-}
-.comment-form-wrap .form-control:focus{
-    background-color: #f7f7f7;
-    border: none;
-}
-.comment-form-wrap textarea.form-control {
-    height: 150px;
-    resize: none;
-}
-.btn-comment {
-	padding: 8px 25px;
-	border: none;
-	color: #fff;
-	margin-top: 10px;
-    transition: 0.4s;
-}
 
 
  /*================================================
-        10. FOOTER SECTION
+        8 FOOTER AREA
 ==================================================*/
  
  .footer {

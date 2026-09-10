@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Final Project: 3-Robot RSSI Triangle Chase | William Tang</title>
+<meta name="description" content="Three identical hand-sized robots. Each one chases exactly one of the others over radio signal strength alone — Robot A chases B, B chases C, C chases…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Final Project: 3-Robot RSSI Triangle Chase | William Tang">
+<meta property="og:description" content="Three identical hand-sized robots. Each one chases exactly one of the others over radio signal strength alone — Robot A chases B, B chases C, C chases…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/13_finalproject/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/final.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Final Project: 3-Robot RSSI Triangle Chase</h3>
+<h1>Final Project: 3-Robot RSSI Triangle Chase</h1>
 
 <p class = "margin"></p>
 
@@ -41,7 +48,7 @@ This was the destination the whole semester was pointing at. <a href="../04_micr
 <p class = "margin"></p>
 
 
-<h4>The demo</h4>
+<h2>The demo</h2>
 <p class = "margin"></p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B0T8-ydcpcA" title="3-robot RSSI triangle chase — PS70 final project demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -58,7 +65,7 @@ Three robots on the floor. Each one is broadcasting its own ESP-NOW beacon at 5 
 <p class = "margin"></p>
 
 
-<h4>The concept: rock-paper-scissors pursuit</h4>
+<h2>The concept: rock-paper-scissors pursuit</h2>
 <p class = "margin"></p>
 
 The interesting thing about a 3-robot cyclic chase (vs. 2 robots where one chases and one runs) is that nobody is the leader and nobody is the loser. A is chasing B, but A is being chased by C — so A doesn't get to just commit to its target, it's also a moving target for somebody else. The result is a closed pursuit loop with no terminal state. Empirically, this manifests as the robots circling, spiraling, and occasionally clustering then re-separating — the kind of pattern you'd get from a swarm rule, not from any explicit "go to a formation" command.
@@ -70,7 +77,7 @@ Critically, none of the robots know they're in a triangle. The triangle is an em
 <p class = "margin"></p>
 
 
-<h4>Hardware: three identical robots</h4>
+<h2>Hardware: three identical robots</h2>
 <p class = "margin"></p>
 
 I deliberately made all three robots mechanically and electrically identical. Same chassis, same motors, same drivers, same wiring, same battery pack. The only thing that distinguishes them is the constant block at the top of their firmware (covered below). This was a course-of-the-semester pivot — earlier I'd tried building a heterogeneous predator/prey pair (a fast NEMA 17 + A4988 robot to flee from a slower one), but matching speeds and behaviors across two different builds added more variables than it added value. Symmetric is better: it makes the radio-only behavior the variable.
@@ -83,7 +90,7 @@ I deliberately made all three robots mechanically and electrically identical. Sa
 <p class = "margin"></p>
 
 
-<h5>Microcontroller and radio</h5>
+<h3>Microcontroller and radio</h3>
 <p class = "margin"></p>
 
 Each robot carries a <b>Seeed XIAO ESP32-C3</b> on a small protoboard tucked into a custom microcontroller holder, with a <b>Seeed 2.4G A-01 whip antenna</b> on the u.FL connector. The external antenna gives noticeably stronger and more stable RSSI than the onboard PCB antenna, which matters because RSSI <i>is</i> the sensor in this project.
@@ -96,7 +103,7 @@ Each robot carries a <b>Seeed XIAO ESP32-C3</b> on a small protoboard tucked int
 <p class = "margin"></p>
 
 
-<h5>Motors and drive</h5>
+<h3>Motors and drive</h3>
 <p class = "margin"></p>
 
 Each robot has <b>2× 28BYJ-48 unipolar steppers</b> driven by <b>ULN2003 carrier boards</b>. The 28BYJ-48 has a 1:63.68 internal gearbox, so output shaft speed is around 12 RPM — slow, but with the gearbox you get strong, repeatable torque from a 5 V supply with no current limiting and no driver tuning. Both motors share a single 5 V rail with the XIAO logic; no separate VMOT, no Vref calibration. That's the whole point of switching from NEMA 17 + A4988 to 28BYJ-48 + ULN2003 — the bipolar setup demanded a separate motor supply, current limit calibration, and per-driver fiddling. Unipolar is "plug it in and it spins."
@@ -109,7 +116,7 @@ Each robot has <b>2× 28BYJ-48 unipolar steppers</b> driven by <b>ULN2003 carrie
 <p class = "margin"></p>
 
 
-<h5>Custom 3D-printed parts</h5>
+<h3>Custom 3D-printed parts</h3>
 <p class = "margin"></p>
 
 The whole chassis is parts I designed and printed for this project, not a kit:
@@ -145,7 +152,7 @@ One concession to uniformity: I ended up <i>not</i> using the printed stepper wh
 <p class = "margin"></p>
 
 
-<h5>3D files (download)</h5>
+<h3>3D files (download)</h3>
 <p class = "margin"></p>
 
 Every printed part used in the final build is mirrored here as a <code>.step</code> file, so the robots are reproducible end-to-end. <code>.step</code> drops into any CAD tool (Fusion, OnShape, SolidWorks) for editing or direct slicing.
@@ -163,7 +170,7 @@ Every printed part used in the final build is mirrored here as a <code>.step</co
 <p class = "margin"></p>
 
 
-<h4>Software: one sketch, three configs</h4>
+<h2>Software: one sketch, three configs</h2>
 <p class = "margin"></p>
 
 All three robots run the same sketch architecture — the only differences across <code>mvp&#95;robotA.ino</code>, <code>mvp&#95;robotB.ino</code>, and <code>mvp&#95;robotC.ino</code> are two constants at the top of the file. Everything else (the motor primitives, the RSSI smoothing, the decision loop, the watchdog, the beacon broadcast) is byte-for-byte identical.
@@ -171,7 +178,7 @@ All three robots run the same sketch architecture — the only differences acros
 <p class = "margin"></p>
 
 
-<h5>RSSI gradient ascent</h5>
+<h3>RSSI gradient ascent</h3>
 <p class = "margin"></p>
 
 A single RSSI value tells the robot how <i>far</i> from its target it currently is, not which <i>direction</i> the target is in. So the chase trick is to recover heading information by sampling the gradient through motion:
@@ -190,7 +197,7 @@ This is gradient ascent on a scalar field that has no direction information, onl
 <p class = "margin"></p>
 
 
-<h5>Smoothing</h5>
+<h3>Smoothing</h3>
 <p class = "margin"></p>
 
 Per-packet RSSI is noisy — multipath, antenna orientation, and people walking nearby can swing it 10+ dB even when the robot is stationary. Each robot keeps a 10-sample rolling window:
@@ -218,7 +225,7 @@ At 5 Hz beacons, 10 samples is a 2-second sliding average — enough to wash out
 <p class = "margin"></p>
 
 
-<h5>The decision loop</h5>
+<h3>The decision loop</h3>
 <p class = "margin"></p>
 
 Once per second, the robot looks at the current smoothed RSSI and compares it to what it was at the previous decision:
@@ -260,7 +267,7 @@ if (delta &gt; RSSI_IMPROVE_THRESHOLD) {
 <p class = "margin"></p>
 
 
-<h5>Continuous motion, non-blocking steps</h5>
+<h3>Continuous motion, non-blocking steps</h3>
 <p class = "margin"></p>
 
 The robot is always moving. It never stops to think. When it decides a curve direction is wrong, it smoothly switches to a different curve while still rolling forward — the inner wheel just slows by a divisor of 4× instead of stopping. Visually this reads as gentle weaving while homing in, rather than the choppy "drive, stop, turn, drive" of a discrete-step controller.
@@ -295,7 +302,7 @@ The two motors run from independent timers, so one can be at full speed while th
 <p class = "margin"></p>
 
 
-<h5>Broadcast, not point-to-point</h5>
+<h3>Broadcast, not point-to-point</h3>
 <p class = "margin"></p>
 
 Every robot sends its beacon to the broadcast address (<code>FF:FF:FF:FF:FF:FF</code>) rather than to a specific peer MAC. That means:
@@ -328,7 +335,7 @@ This is what makes the architecture scale cleanly to N robots without rewiring t
 <p class = "margin"></p>
 
 
-<h5>Symmetry breaking</h5>
+<h3>Symmetry breaking</h3>
 <p class = "margin"></p>
 
 If all three robots happened to start curving in the same direction at the same time, they'd rotate outward in unison and the triangle would collapse to no chase at all. The fix is one constant per robot — <code>INITIAL&#95;CURVE</code> alternating L / R / L around the triangle — so each robot's <code>lastGoodCurve</code> seed is different from its neighbors':
@@ -346,7 +353,7 @@ Pure alternation around an odd cycle isn't perfect (C and A are both LEFT), but 
 <p class = "margin"></p>
 
 
-<h5>Watchdog: lose signal, stop driving</h5>
+<h3>Watchdog: lose signal, stop driving</h3>
 <p class = "margin"></p>
 
 If no target packet arrives for 1 second (target died, target rebooted, target moved out of range), the robot stops driving and goes back to IDLE rather than running blind on stale RSSI:
@@ -369,7 +376,7 @@ As soon as a packet comes back in and the smoothed RSSI is above <code>RSSI&#95;
 <p class = "margin"></p>
 
 
-<h4>Per-robot config — the only thing that differs</h4>
+<h2>Per-robot config — the only thing that differs</h2>
 <p class = "margin"></p>
 
 The entire difference between <code>mvp&#95;robotA.ino</code>, <code>mvp&#95;robotB.ino</code>, and <code>mvp&#95;robotC.ino</code> is this constant block at the top:
@@ -396,7 +403,7 @@ To add a 4th robot D to the cycle (A→B→C→D→A): print another chassis, fl
 <p class = "margin"></p>
 
 
-<h4>Source files</h4>
+<h2>Source files</h2>
 <p class = "margin"></p>
 
 <a href="mvp_robotA.ino" download>mvp&#95;robotA.ino</a> &nbsp;|&nbsp;
@@ -406,7 +413,7 @@ To add a 4th robot D to the cycle (A→B→C→D→A): print another chassis, fl
 <p class = "margin"></p>
 
 
-<h4>How each week's work landed in the final</h4>
+<h2>How each week's work landed in the final</h2>
 <p class = "margin"></p>
 
 The final project isn't a thing I built in one week — it's the integration of pieces built across the semester. Concretely:
@@ -421,7 +428,7 @@ The final project isn't a thing I built in one week — it's the integration of 
 <p class = "margin"></p>
 
 
-<h4>What I'd do next</h4>
+<h2>What I'd do next</h2>
 <p class = "margin"></p>
 
 A few directions that build directly on what's working now:
@@ -446,6 +453,10 @@ A few directions that build directly on what's working now:
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

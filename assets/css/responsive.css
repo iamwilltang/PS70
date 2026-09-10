@@ -1,11 +1,3 @@
-/* Medium Layout: 1280px. */
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .about-text {
-        padding: 10px 0;
-    }
-}
-/* Tablet Layout: 768px. */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .main-menu ul.navbar-nav li a {
@@ -23,19 +15,6 @@
     .hero-sub {
 	   font-size: 22px;
     }
-    .about-area .tab {
-	   margin-top: 30px;
-    }
-    .single-stat {
-        margin-bottom: 60px;
-    }
-     .contact-form {
-        margin-bottom: 30px;
-    }
-    .pagination {
-      margin-bottom: 50px;
-      margin-top: 0;
-    }
 }
 /* Mobile Layout lower than: 320px. */
 
@@ -45,10 +24,6 @@
     }
     .section-title h2 {
         font-size: 32px;
-    }
-    .quotes-content h3 {
-        line-height: 1.2;
-        font-size: 36px;
     }
     .custom-navbar {
         padding: 12px 0;
@@ -140,61 +115,14 @@
     .section-padding {
         padding: 80px 0px;
     }
-    .about-area .tab {
-	   margin-top: 30px;
-    }
     .section-title {
         margin-bottom: 52px;
-    }
-    .about-area h3 {
-        font-size: 24px;
     }
     .modal-body h3 {
 	font-size: 18px;
     }
     .modal-body {
 	padding: 0;
-    }
-    .single-stat {
-        margin-bottom: 60px;
-    }
-    .cta-area h2 {
-	font-size: 32px;
-    }
-    .contact-form {
-        margin-bottom: 30px;
-    }
-    .single-address{
-        margin-bottom: 30px;
-    }
-    .breadcroumb-area h1 {
-        font-size: 32px;
-    }
-    .breadcroumb {
-      font-size: 14px;
-    }
-    .pagination {
-      margin-bottom: 50px;
-      margin-top: 0;
-    }
-    .single-post h2, .single-post-details h2 {
-        font-size: 20px;
-    }
-    .comment-metadata {
-        margin-top: 10px;
-    }
-    .row.replay-area {
-      margin-left: 40px;
-      margin-top: 20px;
-    }
-    .comment-form-wrap {
-      margin-bottom: 50px;
-    }
-    h3.comment-title {
-        font-size: 18px;
-    }
-    .footer {} .footer-text P {
-        font-size: 14px;
     }
     
 }
@@ -207,7 +135,4 @@
     .mobile-menu-activated ul.nav.navbar-nav li a {
         padding: 10px 5px;
     }
-    .welcome-text::before,.welcome-text::after {
-	width: 15%;
-}
 }

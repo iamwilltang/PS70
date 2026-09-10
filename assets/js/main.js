@@ -18,6 +18,9 @@
 
         revealPage();
 
+        /*======== Footer year ===========*/
+        $('#footer-year').text(new Date().getFullYear());
+
         /*======== Sticky header ===========*/
         $('.navbar-collapse a').on('click',function(){
           $(".navbar-collapse").collapse('hide');
@@ -72,27 +75,6 @@
                 $(this).attr('src', $(this).attr('src'));
             });
         });
-
-        /* Third-party plugins are guarded: a missing or failing one should
-           degrade that single feature, not stop everything after it. */
-
-        /*======== Magnific Popup ===========*/
-        if ($.fn.magnificPopup) {
-            $('.work-popup').magnificPopup({type:'image'});
-        }
-
-         /*========  CounterUp ===========*/
-        if ($.fn.counterUp) {
-            $('.counter').counterUp({
-                delay: 4,
-                 time: 800
-            });
-        }
-
-        /*========   WOW js===========*/
-        if (window.WOW) {
-            new WOW({ mobile: false }).init();
-        }
 
     });
 

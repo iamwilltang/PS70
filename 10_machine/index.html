@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Weeks 10–12: Machine Building — Tic-Tac-Toe Drawing Machine | William Tang</title>
+<meta name="description" content="This was a group project — Zaria, Eliza, Widmayer, and me. Our writeup also lives on Widmayer's site at…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weeks 10–12: Machine Building — Tic-Tac-Toe Drawing Machine | William Tang">
+<meta property="og:description" content="This was a group project — Zaria, Eliza, Widmayer, and me. Our writeup also lives on Widmayer's site at…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/10_machine/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/week10.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Weeks 10–12: Machine Building — Tic-Tac-Toe Drawing Machine</h3>
+<h1>Weeks 10–12: Machine Building — Tic-Tac-Toe Drawing Machine</h1>
 
 <p class = "margin"></p>
 
@@ -37,7 +44,7 @@ This was a group project — Zaria, Eliza, Widmayer, and me. Our writeup also li
 <p class = "margin"></p>
 
 
-<h4>Overview</h4>
+<h2>Overview</h2>
 <p class = "margin"></p>
 
 Our goal was to make a tic-tac-toe drawing machine that plays against you and takes turns putting X's and O's on a sheet of paper. The machine uses computer vision — an ESP32-CAM mounted above the paper — to snapshot the board, figure out where the human placed their mark, and then drive a pen-plotter to draw its own response.
@@ -55,7 +62,7 @@ Our goal was to make a tic-tac-toe drawing machine that plays against you and ta
 <p class = "margin"></p>
 
 
-<h4>Construction</h4>
+<h2>Construction</h2>
 <p class = "margin"></p>
 
 To construct our drawing machine we followed the build-kit directions exactly, and our end effector was simply a marker. The piece that needed extra design was a custom ESP32-CAM holder so the camera could be positioned directly above the piece of paper and capture the full board in one frame — visible in the photos above.
@@ -67,7 +74,7 @@ A big issue that we ran into was with the computer vision, and getting the Pytho
 <p class = "margin"></p>
 
 
-<h4>System architecture</h4>
+<h2>System architecture</h2>
 <p class = "margin"></p>
 
 Three pieces cooperating:
@@ -97,7 +104,7 @@ A turn, step by step:
 <p class = "margin"></p>
 
 
-<h4>Vision pipeline — what the camera actually sees</h4>
+<h2>Vision pipeline — what the camera actually sees</h2>
 <p class = "margin"></p>
 
 After the camera POSTs the JPEG, <code>detect.py</code>'s job is to chop it into 9 cells and decide which mark is in each. Here's the debug visualization the script can spit out — green lines are the detected grid, and you can see one cell where it's pulled out a candidate O contour:
@@ -190,7 +197,7 @@ Here's the per-cell classifier from <code>detect.py</code> — the function that
 <p class = "margin"></p>
 
 
-<h4>Camera firmware (ESP32-CAM)</h4>
+<h2>Camera firmware (ESP32-CAM)</h2>
 <p class = "margin"></p>
 
 The camera board boots, brings up the OV2640 sensor and the WiFi link, and then waits for serial commands. Here's the setup + main loop excerpt:
@@ -317,7 +324,7 @@ Full code for all three components (camera firmware, motor firmware, Python serv
 <p class = "margin"></p>
 
 
-<h4>Challenges &amp; next steps</h4>
+<h2>Challenges &amp; next steps</h2>
 <p class = "margin"></p>
 
 The biggest issue we hit was getting the Python code to actually detect changes on the board. It was okay at detecting X's and not good at detecting O's at all — the contour-based shape heuristics in <code>&#95;classify&#95;cell</code> would either miss O's entirely or confuse a partly-drawn O with an X. Moving forward we'd try offloading the classification to an actual image-recognition model (a small CNN, or even just sending the cropped cell to a hosted vision API) instead of hand-tuning OpenCV thresholds.
@@ -339,6 +346,10 @@ The biggest issue we hit was getting the Python code to actually detect changes 
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

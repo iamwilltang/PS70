@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
 }
 
-h3 {
+h1 {
   font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.4px;
@@ -149,18 +149,18 @@ h3 {
   border-bottom: 1px solid var(--rule);
 }
 
-h4 {
+h2 {
   font-size: 21px;
   margin: 52px 0 14px;
 }
 
-h5 {
+h3 {
   font-size: 17px;
   margin: 36px 0 10px;
   color: var(--ink);
 }
 
-h6 {
+h4 {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -252,6 +252,8 @@ body.index-page {
   font-weight: 800;
   letter-spacing: -0.4px;
   margin: 0 0 14px;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .week-intro p {
@@ -392,10 +394,35 @@ body.index-page {
     padding: 40px 20px 70px;
   }
 
-  h3 { font-size: 25px; }
-  h4 { font-size: 19px; margin-top: 40px; }
+  h1 { font-size: 25px; }
+  h2 { font-size: 19px; margin-top: 40px; }
 
   .week-nav {
     grid-template-columns: 1fr;
   }
+}
+
+/* ------------------------------------------------------------- footer ---- */
+/* Matches the main site's footer so the two halves close the same way. */
+
+.site-footer {
+  background: #222;
+  padding: 22px 0;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.site-footer a {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.site-footer a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
 }

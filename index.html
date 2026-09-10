@@ -26,16 +26,7 @@
 
         <!--== bootstrap ==-->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!--== font-awesome ==-->
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-        
-        <!--== magnific-popup ==-->
-        <link href="assets/css/magnific-popup.css" rel="stylesheet">
-        
-        <!--== animate css ==-->
-        <link href="assets/css/animate.min.css" rel="stylesheet">
-
+                        
         <!--== style css ==-->
         <link href="style.css" rel="stylesheet">
         
@@ -47,11 +38,6 @@
         
         <!--== jQuery ==-->
         <script src="assets/js/jquery-2.1.4.min.js"></script>
-
-        <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         
@@ -76,7 +62,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
                             </div>
-                            <a class="theme-color" href="index.html">William</a> <!--== logo ==-->
+                            <a href="index.html">William</a> <!--== logo ==-->
                         </div>
                     </div>
 
@@ -112,7 +98,7 @@
                                   <p class="hero-sub">Physics &amp; Philosophy @ Harvard</p>
                                 </div>
                                 <div class="home-arrow">
-                                    <a href="#about" class="smooth-scroll"><i class="fa fa-angle-double-down"></i></a>
+                                    <a href="#about" class="smooth-scroll" aria-label="Scroll to About"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15.5 5.5 9l1.4-1.4L12 12.7l5.1-5.1L18.5 9 12 15.5z"/></svg></a>
                                 </div>
                             </div>
                        </div> <!--/.row-->
@@ -149,8 +135,12 @@
                             <p class="tools-line">Python &middot; C &middot; Java &middot; ESP32 / Arduino &middot; SolidWorks &middot; Fusion 360 &middot; Git</p>
 
                             <ul class="social-links"> <!--=== social-links ===-->
-                                <li><a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn Profile"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="https://twitter.com/WilliamxTang" target="_blank" rel="noopener noreferrer" aria-label="My Twitter Profile"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/williamxtang/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1-.01 5.001A2.5 2.5 0 0 1 4.98 3.5zM3 21h4V9H3v12zm7-12h3.8v1.64h.05c.53-.95 1.83-1.95 3.77-1.95C21.4 8.69 22 11.1 22 14.24V21h-4v-6.02c0-1.44-.03-3.29-2.01-3.29-2.01 0-2.32 1.57-2.32 3.19V21h-4V9z"/></svg>
+                                </a></li>
+                                <li><a href="https://twitter.com/WilliamxTang" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.53 3h3.02l-6.6 7.54L21.7 21h-5.98l-4.68-6.12L5.68 21H2.66l7.06-8.07L2.3 3h6.13l4.23 5.6L17.53 3zm-1.06 16.2h1.67L7.6 4.71H5.81l10.66 14.49z"/></svg>
+                                </a></li>
                             </ul>
                         </div>
                     </div>
@@ -359,9 +349,9 @@
         <!--====== FOOTER AREA ======-->
         <footer class="footer">
             <div class="container">
-                <div class="row wow zoomIn" data-wow-delay="0.4s">
+                <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>&copy;2026 <strong>William Tang</strong>. All Rights Reserved</p>
+                        <p>&copy;<span id="footer-year">2026</span> <strong>William Tang</strong>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>
@@ -372,16 +362,7 @@
         <!--== plugins js ==-->
         <script src="assets/js/plugins.js"></script>
         
-        
-        <!--== counterup js ==-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        
-        <!--== waypoints js ==-->
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        
-         <!--== wow js ==-->
-        <script src="assets/js/wow.min.js"></script>
-        
+                                
          <!--== main js ==-->
         <script src="assets/js/main.js"></script>
 

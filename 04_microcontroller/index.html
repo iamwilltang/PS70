@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 4: Microcontroller Programming | William Tang</title>
+<meta name="description" content="This was the first real slice of my final project. I got two XIAO ESP32-C3 boards talking to each other over ESP-NOW, and the receiver decides — based…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week 4: Microcontroller Programming | William Tang">
+<meta property="og:description" content="This was the first real slice of my final project. I got two XIAO ESP32-C3 boards talking to each other over ESP-NOW, and the receiver decides — based…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/04_microcontroller/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/week04.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Week 4: Microcontroller Programming</h3>
+<h1>Week 4: Microcontroller Programming</h1>
 
 <p class = "margin"></p>
 
@@ -45,7 +52,7 @@ The video below is the very first milestone of that work — two XIAOs on USB, s
 <p class = "margin"></p>
 
 
-<h4>The setup</h4>
+<h2>The setup</h2>
 <p class = "margin"></p>
 
 Two boards on the bench:
@@ -61,7 +68,7 @@ The MAC addresses are hard-coded into the sender (the receiver's MAC is the dest
 <p class = "margin"></p>
 
 
-<h4>Why ESP-NOW (not WiFi)</h4>
+<h2>Why ESP-NOW (not WiFi)</h2>
 <p class = "margin"></p>
 
 ESP-NOW is a peer-to-peer protocol built into the ESP32 radio. No router, no SSID, no IP stack — both boards come up in <code>WIFI&#95;STA</code> mode, register each other as peers by MAC address, and start exchanging frames directly. Latency is tiny (sub-ms) and the receive callback gives you the per-packet RSSI for free, which is what I actually care about. For a swarm of robots that have to find each other anywhere there's no router, this is exactly the right tool.
@@ -69,7 +76,7 @@ ESP-NOW is a peer-to-peer protocol built into the ESP32 radio. No router, no SSI
 <p class = "margin"></p>
 
 
-<h4>The MOSFET switching trick</h4>
+<h2>The MOSFET switching trick</h2>
 <p class = "margin"></p>
 
 The motor is switched by a P-channel MOSFET on the high side, with an external pull-up resistor between gate and VCC. That gives you a really clean state machine controllable from one XIAO pin:
@@ -86,7 +93,7 @@ Crucially, this is boot-safe. The XIAO's GPIO defaults to INPUT at reset, so the
 <p class = "margin"></p>
 
 
-<h4>RSSI smoothing + hysteresis</h4>
+<h2>RSSI smoothing + hysteresis</h2>
 <p class = "margin"></p>
 
 Raw RSSI off a single packet is noisy — it can swing 10+ dB packet-to-packet from multipath, antenna orientation, or someone walking past. So the receiver keeps a 10-sample rolling window and acts on the average.
@@ -110,7 +117,7 @@ There's also a 1-second watchdog: if no packet arrives for that long (sender die
 <p class = "margin"></p>
 
 
-<h4>Sender sketch</h4>
+<h2>Sender sketch</h2>
 <p class = "margin"></p>
 
 <a href="mvp_sender.ino" download>mvp&#95;sender.ino</a>
@@ -165,7 +172,7 @@ void loop() {
 <p class = "margin"></p>
 
 
-<h4>Receiver sketch</h4>
+<h2>Receiver sketch</h2>
 <p class = "margin"></p>
 
 <a href="mvp_receiver.ino" download>mvp&#95;receiver.ino</a>
@@ -301,6 +308,10 @@ void loop() {
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

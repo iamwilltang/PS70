@@ -1,54 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_sender/mvp_sender.ino\" mvp_sender.ino)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_receiver/mvp_receiver.ino\" mvp_receiver.ino)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_board_addresses/mvp_board_addresses.ino\" mvp_board_addresses.ino)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 7/mvp_motor_test/mvp_motor_test.ino\" mvp_motor_test.ino)",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 07_outputs/)",
-      "WebFetch(domain:matthewchang0.github.io)",
-      "WebFetch(domain:dragoncat5482.github.io)",
-      "Bash(python -c 'import pillow_heif; pillow_heif.register_heif_opener\\(\\); from PIL import Image; import os *)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.svg\" cute-cat.svg)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/cute cat.jpg\" cute-cat.jpg)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 8/Group4Goldfish.f3d\" group4-goldfish.f3d)",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 08_cnc/)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_follower/mvp_follower.ino\" mvp_follower.ino)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/mvp_prey/mvp_prey.ino\" mvp_prey.ino)",
-      "Bash(python -c \"import pillow_heif; pillow_heif.register_heif_opener\\(\\); from PIL import Image; im=Image.open\\(r'C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 9/two xiaos with antennas.HEIC'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\(r'c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70/09_networking/xiaos-with-antennas.jpg','JPEG',quality=85\\); print\\(im.size\\)\")",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 09_networking/)",
-      "WebFetch(domain:wtrenteetun31.github.io)",
-      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/IMG_6798.jpeg\" -o img-6798.jpeg)",
-      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/IMG_6799.jpeg\" -o img-6799.jpeg)",
-      "Bash(curl -sL \"https://wtrenteetun31.github.io/PS70/10_machine/documentation/Screenshot%202026-04-26%20at%2010.46.09%E2%80%AFPM.png\" -o debug-grid.png)",
-      "Bash(python -c \"from PIL import Image; im = Image.open\\('img-6798.jpeg'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\('img-6798.jpeg', 'JPEG', quality=85\\); print\\('6798:', im.size\\); im=Image.open\\('img-6799.jpeg'\\); w,h=im.size; im=im.resize\\(\\(1600,int\\(h*1600/w\\)\\), Image.LANCZOS\\) if w>1600 else im; im.convert\\('RGB'\\).save\\('img-6799.jpeg', 'JPEG', quality=85\\); print\\('6799:', im.size\\)\")",
-      "Bash(rm debug-grid.png)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/debug_grid.jpg\" debug-grid.jpg)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/detect.py\" detect.py)",
-      "Bash(cp \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2Sophomore Year/Semester 2/PS 70/Week 10/machine_week/README.md\" README.md)",
-      "Bash(git -C \"c:/Users/willi.DESKTOP-P6DDRVI/OneDrive/Documents/GitHub/PS70\" status 10_machine/)",
-      "Bash(ls \"C:/Users/willi.DESKTOP-P6DDRVI/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-OneDrive-Documents-GitHub-PS70/memory/\" 2>/dev/null; echo \"---DROPBOX---\"; ls \"C:/Users/willi.DESKTOP-P6DDRVI/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-C-L-Dropbox-William-Tang-Harvard-2Sophomore-Year-Semester-2-PS-70/memory/\" 2>/dev/null; echo \"---DROPBOX2---\"; ls \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Tech/Claude Code/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-C-L-Dropbox-William-Tang-Harvard-2Sophomore-Year-Semester-2-PS-70/memory/\" 2>/dev/null)",
-      "Read(//c/Users/willi.DESKTOP-P6DDRVI/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-OneDrive-Documents-GitHub-PS70/**)",
-      "Bash(ls \"C:/Users/willi.DESKTOP-P6DDRVI/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-OneDrive-Documents-Arduino/memory/\" 2>/dev/null)",
-      "Read(//c/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Tech/Claude Code/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-OneDrive-Documents-Arduino/memory/**)",
-      "Read(//c/Users/willi.DESKTOP-P6DDRVI/.claude/projects/c--Users-willi-DESKTOP-P6DDRVI-OneDrive-Documents-Arduino/memory/**)",
-      "Bash(ls \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2.Sophomore Year/Semester 2/PS 70/\" 2>/dev/null | head -30)",
-      "Read(//c/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/William Tang/Harvard/2.Sophomore Year/Semester 2/**)",
-      "Bash(find \"C:/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox\" -maxdepth 6 -name \"Final*\" -type d 2>/dev/null | head -10)",
-      "Read(//c/Users/willi.DESKTOP-P6DDRVI/C&L Dropbox/**)",
-      "PowerShell(Get-Command magick -ErrorAction SilentlyContinue; Get-Command ffmpeg -ErrorAction SilentlyContinue; Get-Command Add-Type -ErrorAction SilentlyContinue | Out-Null; \"checking-HEIC-codec:\"; try { Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\C&L Dropbox\\\\William Tang\\\\Harvard\\\\2Sophomore Year\\\\Semester 2\\\\PS 70\\\\Final Project\\\\Media\\\\assembled robot.HEIC\"\\); \"loaded ok, size $\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\) } catch { \"load failed: $\\($_.Exception.Message\\)\" })",
-      "PowerShell(Rename-Item \"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\OneDrive\\\\Documents\\\\GitHub\\\\PS70\\\\13_finalproject\\\\wheels-&-chassis.jpg\" \"wheels-and-chassis.jpg\"; Get-ChildItem \"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\OneDrive\\\\Documents\\\\GitHub\\\\PS70\\\\13_finalproject\\\\\" | Sort-Object Name | Select-Object Name, @{N='SizeKB';E={[math]::Round\\($_.Length/1KB,1\\)}})",
-      "PowerShell($dst = \"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\OneDrive\\\\Documents\\\\GitHub\\\\PS70\\\\13_finalproject\\\\3d_files\"; $remove = @\\(\"robot-chassis.3mf\", \"microcontroller-holder.3mf\", \"battery-holder.3mf\", \"ball-bearing-caster.3mf\", \"unipolar-stepperwheel.3mf\"\\); foreach \\($f in $remove\\) { $p = Join-Path $dst $f; if \\(Test-Path $p\\) { Remove-Item $p; \"removed $f\" } }; \"\"; \"--- remaining ---\"; Get-ChildItem $dst | Sort-Object Name | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}})",
-      "Bash(grep -i \"\\\\.step$\")",
-      "PowerShell($src = \"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\C&L Dropbox\\\\William Tang\\\\Harvard\\\\2Sophomore Year\\\\Semester 2\\\\PS 70\\\\Final Project\\\\3D Prints\"; $dst = \"C:\\\\Users\\\\willi.DESKTOP-P6DDRVI\\\\OneDrive\\\\Documents\\\\GitHub\\\\PS70\\\\13_finalproject\\\\3d_files\"; Copy-Item \\(Join-Path $src \"Unipolar motor mount.step\"\\) \\(Join-Path $dst \"unipolar-motor-mount.step\"\\) -Force; Copy-Item \\(Join-Path $src \"DC Wheel Spoke CAD.step\"\\) \\(Join-Path $dst \"wheel-extender.step\"\\) -Force; Remove-Item \\(Join-Path $dst \"unipolar-motor-mount.3mf\"\\) -ErrorAction SilentlyContinue; Remove-Item \\(Join-Path $dst \"stepper-wheel-extender.3mf\"\\) -ErrorAction SilentlyContinue; \"--- final 3d_files/ ---\"; Get-ChildItem $dst | Sort-Object Name | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}})",
-      "WebFetch(domain:nathanmelenbrink.github.io)",
-      "WebFetch(domain:bobbymmccarthy.github.io)",
-      "WebFetch(domain:supercooljessica.github.io)",
-      "WebFetch(domain:vleeharvard.github.io)",
-      "WebFetch(domain:emspeiser.github.io)"
-    ],
-    "additionalDirectories": [
-      "C:\\Users\\willi.DESKTOP-P6DDRVI\\OneDrive\\Documents\\Arduino\\mvp_robotA"
+      "WebFetch(domain:iamwilltang.github.io)",
+      "WebFetch(domain:seas.harvard.edu)",
+      "WebFetch(domain:christopherprainito.com)"
     ]
   }
 }

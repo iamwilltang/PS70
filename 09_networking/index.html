@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 9: Radio, WiFi, Bluetooth (IoT) | William Tang</title>
+<meta name="description" content="This is the week the comms layer moved from the bench to actual rolling robots. Week 4 proved one XIAO could broadcast and another could read RSSI off it…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week 9: Radio, WiFi, Bluetooth (IoT) | William Tang">
+<meta property="og:description" content="This is the week the comms layer moved from the bench to actual rolling robots. Week 4 proved one XIAO could broadcast and another could read RSSI off it…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/09_networking/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/week09.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Week 9: Radio, WiFi, Bluetooth (IoT)</h3>
+<h1>Week 9: Radio, WiFi, Bluetooth (IoT)</h1>
 
 <p class = "margin"></p>
 
@@ -37,7 +44,7 @@ This is the week the comms layer moved from the bench to actual rolling robots. 
 <p class = "margin"></p>
 
 
-<h4>Radio hardware</h4>
+<h2>Radio hardware</h2>
 <p class = "margin"></p>
 
 Each robot carries a <b>Seeed XIAO ESP32-C3</b> wired up on a solderless breadboard with a <b>Seeed 2.4G A-01 external whip antenna</b> plugged into the XIAO's u.FL connector. Originally I'd planned a custom PCB to consolidate everything down, but I ended up sticking with protoboards through the final — easier to iterate, easier to debug, and using the external antenna instead of the onboard PCB antenna gave me noticeably stronger and steadier RSSI readings during range testing.
@@ -54,7 +61,7 @@ That photo is the bench-side range test before bolting the radios into the robot
 <p class = "margin"></p>
 
 
-<h4>Predator + prey demo</h4>
+<h2>Predator + prey demo</h2>
 <p class = "margin"></p>
 
 <iframe width="315" height="560" src="https://www.youtube.com/embed/LTOPpp896Ok" title="Two robots, RSSI predator + prey chase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -66,11 +73,11 @@ Two robots on the floor. One is running <code>mvp&#95;follower.ino</code> (the p
 <p class = "margin"></p>
 
 
-<h4>How the chase actually works</h4>
+<h2>How the chase actually works</h2>
 <p class = "margin"></p>
 
 
-<h5>The signal: RSSI gradient</h5>
+<h3>The signal: RSSI gradient</h3>
 <p class = "margin"></p>
 
 Each ESP-NOW packet arrives stamped with an RSSI value in dBm — stronger when the broadcaster is close, weaker when it's far. On its own that one number doesn't tell a robot which <i>direction</i> to drive in, only how far it currently is. So the chase trick is:
@@ -89,7 +96,7 @@ This is gradient ascent on a signal that has no direction information, only magn
 <p class = "margin"></p>
 
 
-<h5>RSSI smoothing</h5>
+<h3>RSSI smoothing</h3>
 <p class = "margin"></p>
 
 Raw per-packet RSSI is too noisy to act on directly (multipath, antenna orientation, a hand passing through the line of sight all swing it 10+ dB). Both sketches keep a rolling 10-sample window and average. At 5 Hz beacons, that's a 2-second sliding average — enough to wash out fast jitter without making the robot feel laggy.
@@ -97,7 +104,7 @@ Raw per-packet RSSI is too noisy to act on directly (multipath, antenna orientat
 <p class = "margin"></p>
 
 
-<h5>The decision loop</h5>
+<h3>The decision loop</h3>
 <p class = "margin"></p>
 
 Every 1 second the predator looks at the average RSSI and compares to what it was 1 second ago:
@@ -112,7 +119,7 @@ Every 1 second the predator looks at the average RSSI and compares to what it wa
 <p class = "margin"></p>
 
 
-<h5>Continuous motion (no stop-and-think pauses)</h5>
+<h3>Continuous motion (no stop-and-think pauses)</h3>
 <p class = "margin"></p>
 
 The robot is always moving. It never stops to think — when it decides the curve direction is wrong, it just smoothly switches to a different curve while still rolling forward. Inner wheel slows by a divisor of 4× rather than stopping. Visually this reads as the robot weaving gently while it homes in, rather than the choppy "drive a bit, stop, turn, drive a bit" you'd get from a discrete-step controller.
@@ -124,7 +131,7 @@ To pull this off without losing radio packets, the stepper-driving code is a non
 <p class = "margin"></p>
 
 
-<h5>Symmetry breaking</h5>
+<h3>Symmetry breaking</h3>
 <p class = "margin"></p>
 
 The final project is a 3-robot triangle (A chases B, B chases C, C chases A). If all three predators are coded to start curving right, they end up rotating outward together and the triangle collapses. To break that, every robot has an <code>INITIAL&#95;CURVE</code> constant that alternates L / R / L around the triangle. The constants live in a clearly-flagged block at the top of <code>mvp&#95;follower.ino</code> — same sketch, same binary, three different curve initializations.
@@ -153,7 +160,7 @@ To keep this week's two-robot demo clean: one robot was running <code>mvp&#95;fo
 <p class = "margin"></p>
 
 
-<h4>Broadcast, not point-to-point</h4>
+<h2>Broadcast, not point-to-point</h2>
 <p class = "margin"></p>
 
 A subtle but important choice: both robots send their beacons to the broadcast address (<code>FF:FF:FF:FF:FF:FF</code>) rather than to a specific peer MAC. That means:
@@ -171,7 +178,7 @@ This scales cleanly to the 3-robot triangle without me having to register each r
 <p class = "margin"></p>
 
 
-<h4>Hysteresis bands</h4>
+<h2>Hysteresis bands</h2>
 <p class = "margin"></p>
 
 The follower uses different thresholds from the prey (and both are different from the simple chaser in Week 4):
@@ -184,7 +191,7 @@ The follower uses different thresholds from the prey (and both are different fro
 <p class = "margin"></p>
 
 
-<h4>Source files</h4>
+<h2>Source files</h2>
 <p class = "margin"></p>
 
 <a href="mvp_follower.ino" download>mvp&#95;follower.ino</a> — the predator, also the canonical "robot" sketch for the final project. Each of the three triangle robots runs this same file with <code>TARGET&#95;MAC</code> and <code>INITIAL&#95;CURVE</code> swapped.
@@ -210,6 +217,10 @@ The follower uses different thresholds from the prey (and both are different fro
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

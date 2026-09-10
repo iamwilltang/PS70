@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 6: Electronic Inputs | William Tang</title>
+<meta name="description" content="The assignment had two parts: build and characterize a capacitive distance sensor, and then use a second, different sensor. The first one I built in class…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week 6: Electronic Inputs | William Tang">
+<meta property="og:description" content="The assignment had two parts: build and characterize a capacitive distance sensor, and then use a second, different sensor. The first one I built in class…">
+<meta property="og:url" content="https://iamwilltang.github.io/PS70/06_inputs/">
+<meta property="og:image" content="https://iamwilltang.github.io/PS70/assets/img/ps70-thumbs/week06.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 <link href="../ps70-style.css" rel="stylesheet">
 </head>
@@ -28,7 +35,7 @@
 <br></br>
 
 
-<h3>Week 6: Electronic Inputs</h3>
+<h1>Week 6: Electronic Inputs</h1>
 
 <p class = "margin"></p>
 
@@ -45,11 +52,11 @@ My teammates wrote up the same Assignment 1 build from their own angles — wort
 <p class = "margin"></p>
 
 
-<h4>Assignment 1: Capacitive Distance Sensor</h4>
+<h2>Assignment 1: Capacitive Distance Sensor</h2>
 <p class = "margin"></p>
 
 
-<h5>The setup</h5>
+<h3>The setup</h3>
 <p class = "margin"></p>
 
 Two pieces of tin foil are the electrodes. One (TX) is taped to a vertical cardboard flap at one end of a cardboard rail. The other (RX) is taped to a wooden block that slides along the rail. A ruler is glued along the rail so we can read distance directly.
@@ -76,7 +83,7 @@ Both electrodes wire back to a XIAO ESP32-C3 with alligator clips:
 <p class = "margin"></p>
 
 
-<h5>How the measurement works</h5>
+<h3>How the measurement works</h3>
 <p class = "margin"></p>
 
 The two foil electrodes form a tiny parallel-plate-ish capacitor with the air gap between them as the dielectric. When the wooden block (with the RX foil on it) is close to the TX foil, more of the TX's electric field couples into the RX foil, and that shows up as a bigger voltage swing on the RX side.
@@ -102,7 +109,7 @@ Summing 100 samples knocks down random noise by ~10× (square-root-of-N averagin
 <p class = "margin"></p>
 
 
-<h5>Code</h5>
+<h3>Code</h3>
 <p class = "margin"></p>
 
 <a href="capacitance.ino" download>capacitance.ino</a>
@@ -151,7 +158,7 @@ long tx_rx(){         // Function to execute rx_tx algorithm and return a value
 <p class = "margin"></p>
 
 
-<h5>Calibration</h5>
+<h3>Calibration</h3>
 <p class = "margin"></p>
 
 To turn this into a real sensor we needed to find out what reading corresponds to what distance. So we parked the wooden block at known distances on the ruler, watched the serial monitor, and wrote down the number.
@@ -197,7 +204,7 @@ The setup, mid-calibration with the wooden block on the rail:
 <p class = "margin"></p>
 
 
-<h4>Assignment 2: RSSI as a Distance Sensor</h4>
+<h2>Assignment 2: RSSI as a Distance Sensor</h2>
 <p class = "margin"></p>
 
 For the second sensor I'm counting the antennas on my final-project robots. Each XIAO ESP32-C3 has an onboard PCB antenna, and every ESP-NOW packet that arrives comes stamped with an <b>RSSI</b> value — the radio's measurement of how strong that packet was, in dBm. Stronger signal means the broadcasting robot is close; weaker signal means it's far. That's a distance sensor, just one that runs on radio waves instead of capacitive coupling between foil plates.
@@ -232,6 +239,10 @@ The receiver code uses two calibrated thresholds — chase if RSSI drops below �
 </xmp>
 
 <script src="../strapdown.js"></script>
+
+<footer class="site-footer">
+  <p>&copy;2026 William Tang &middot; <a href="../index.html">Home</a></p>
+</footer>
 
 </body>
 

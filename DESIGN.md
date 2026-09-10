@@ -2,6 +2,15 @@
 
 _Last updated : 2025-05-11_
 
+> **Historical document.** This was written for PS70 and describes the site as it
+> stood in May 2025. It is kept as a record of the reasoning at the time and is
+> deliberately not being updated. Several things below are no longer true: the
+> contact form and its `contact.php` / `mail()` pipeline have been removed (the
+> site is hosted on GitHub Pages, which cannot execute PHP), the blog is gone,
+> Typed.js / MixItUp / WOW.js / Font Awesome are no longer used, and the type is
+> now Inter rather than Poppins and Montserrat. See `README.md` for how the
+> codebase is actually laid out today.
+
 ---
 
 ## 1 • High-level architecture
