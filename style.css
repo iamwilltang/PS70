@@ -183,26 +183,26 @@ a{
  .loaded #loader-wrapper .loader-section.section-left {
      -webkit-transform: translateX(-100%);
      transform: translateX(-100%);
-     -webkit-transition: all 0.5s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-     transition: all 0.5s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+     -webkit-transition: all 0.3s 0.05s cubic-bezier(0.645, 0.045, 0.355, 1);
+     transition: all 0.3s 0.05s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
  .loaded #loader-wrapper .loader-section.section-right {
      -webkit-transform: translateX(100%);
      transform: translateX(100%);
-     -webkit-transition: all 0.5s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-     transition: all 0.5s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+     -webkit-transition: all 0.3s 0.05s cubic-bezier(0.645, 0.045, 0.355, 1);
+     transition: all 0.3s 0.05s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
  .loaded #loader {
      opacity: 0;
-     -webkit-transition: all 0.3s ease-out;
-     transition: all 0.3s ease-out;
+     -webkit-transition: all 0.15s ease-out;
+     transition: all 0.15s ease-out;
 }
  .loaded #loader-wrapper {
      visibility: hidden;
      -webkit-transform: translateY(-100%);
      transform: translateY(-100%);
-     -webkit-transition: all 0.5s 0.3s ease-out;
-     transition: all 0.5s 0.3s ease-out;
+     -webkit-transition: all 0.3s 0.05s ease-out;
+     transition: all 0.3s 0.05s ease-out;
 }
 
  /*================================================
@@ -713,6 +713,14 @@ h3.project-title {
 }
 .about-body p:first-child {
     margin-bottom: 0;
+}
+ /* The personal note lives in About; reset the centring it used in Contact. */
+.about-body .personal-line {
+    max-width: none;
+    margin: 20px 0 0;
+    text-align: left;
+    font-size: 15px;
+    line-height: 28px;
 }
 .about-body .tools-line {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

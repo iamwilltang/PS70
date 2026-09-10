@@ -77,18 +77,13 @@
  
         /*========   WOW js===========*/
         new WOW({ mobile: false }).init();
-    
-    
 
-    });
-    
-   
-    $window.on('load', function(){
-        
         /*======== Preloader ===========*/
+        /* Fires on DOM ready rather than window load, so the curtain lifts as
+           soon as the page is laid out instead of waiting on every image. */
         $('body').addClass('loaded');
 
     });
 
-}(jQuery));	
+}(jQuery));
 

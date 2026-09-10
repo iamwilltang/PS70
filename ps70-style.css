@@ -229,6 +229,12 @@ pre code {
 /* ------------------------------------------------------- week index ----- */
 /* Same card treatment as Selected Work on the home page. */
 
+/* Tinted ground so the white cards read as cards. The week write-ups stay
+   on white -- they're documents, not a grid. */
+body.index-page {
+  background: #f2f4f7;
+}
+
 .week-index {
   max-width: 1170px;
   margin: 0 auto;
