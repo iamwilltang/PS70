@@ -59,13 +59,6 @@
             });
         });
    
-        /*======== Parallax js ===========*/
-        $window.stellar({
-            responsive: true,
-            positionProperty: 'position',
-            horizontalScrolling: false
-        });
-        
         /*======== Magnific Popup ===========*/
         $('.work-popup').magnificPopup({type:'image'});
         
