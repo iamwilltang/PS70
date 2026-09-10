@@ -56,7 +56,7 @@ The server binds `0.0.0.0:6000`. Note the laptop's LAN IP — if it isn't `192.1
 
 ### 4. WiFi
 
-Both boards connect to `MAKERSPACE` (password `12345678`) on boot. Update the credentials in both sketches if your network differs.
+Both boards connect to the makerspace WiFi on boot. Set the SSID and password near the top of each sketch to match your own network.
 
 ---
 
