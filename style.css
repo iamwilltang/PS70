@@ -87,8 +87,8 @@ a{
      /* Failsafe: if JS never runs at all -- blocked, a load failure, an error
         before the reveal -- the preloader must not hide the site forever.
         Normal path adds .loaded in well under a second, long before this. */
-     -webkit-animation: preloader-failsafe 0.4s ease-out 4s forwards;
-     animation: preloader-failsafe 0.4s ease-out 4s forwards;
+     -webkit-animation: preloader-failsafe 0.4s ease-out 2.5s forwards;
+     animation: preloader-failsafe 0.4s ease-out 2.5s forwards;
 }
  @-webkit-keyframes preloader-failsafe {
      to { opacity: 0; visibility: hidden; }
