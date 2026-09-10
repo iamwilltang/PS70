@@ -721,20 +721,7 @@ h3.project-title {
 .about-body p {
     font-size: 17px;
     line-height: 32px;
-}
-.about-body p:first-child {
-    margin-bottom: 0;
-}
- /* The personal note lives in About; reset the centring it used in Contact. */
- /* Same size and leading as the bio above it -- at 15px/#888 it read as a
-    different typeface rather than a second paragraph. */
-.about-body .personal-line {
-    max-width: none;
-    margin: 22px 0 0;
-    text-align: left;
-    font-size: 17px;
-    line-height: 32px;
-    color: #555;
+    margin-bottom: 22px;
 }
 .about-body .tools-line {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -797,13 +784,6 @@ h3.project-title {
 .contact-sep {
     color: #ccc;
     margin: 0 12px;
-}
-.personal-line {
-    font-size: 15px;
-    line-height: 26px;
-    color: #888;
-    max-width: 620px;
-    margin: 0 auto;
 }
 .modal-content {
 	padding: 10px 30px;
@@ -925,9 +905,6 @@ h3.project-title {
  }
 .contact-info-area .contact-sep {
      color: #4a5560;
- }
-.contact-info-area .personal-line {
-     color: #98a3ae;
  }
 .contact-form .form-group {
      margin-bottom: 15px;
