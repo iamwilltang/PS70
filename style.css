@@ -28,20 +28,20 @@ NOTE: This is main stylesheet of the template.
             End table content 
 ===================================================*/
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
  /*================================================
              0 BASE CSS
 ==================================================*/
 body {
-     font-family: 'Poppins', sans-serif;
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
      color: #444;
      font-weight: 400;
      line-height: 28px;
      font-size: 15px;
  }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     margin: 0 0 15px;
     font-weight: 700;
     color: #222;
@@ -237,7 +237,7 @@ a{
      transition: all 0.4s ease-in-out;
  }
  .logo a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	color: #fff;
 	display: inline-block;
 	font-size: 32px;
@@ -443,7 +443,7 @@ a{
     text-align: center;
 }
  .about-area .tab .nav-tabs li a {
-     font-family: 'Montserrat', sans-serif;
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
      width: 60%;
      margin: 0 auto;
     background:transparent;
@@ -502,7 +502,7 @@ h4.about-heading {
     margin-bottom: 0;
 }
 .about-area h4.skill-group-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	text-transform: uppercase;
 	font-size: 15px;
     font-weight: 700;
@@ -586,7 +586,7 @@ h4.about-heading {
 }
 .project-meta {
     display: block;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -607,7 +607,7 @@ h3.project-title {
     margin-bottom: 16px;
 }
 .project-link {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1.2px;
@@ -628,7 +628,7 @@ h3.project-title {
     font-size: 14px;
 }
 .spec-table th {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -715,7 +715,7 @@ h3.project-title {
     margin-bottom: 0;
 }
 .about-body .tools-line {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 13px;
     letter-spacing: 0.6px;
     color: #777;
@@ -740,7 +740,7 @@ h3.project-title {
 }
 .writing-meta {
     display: block;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -762,7 +762,7 @@ h3.project-title {
     margin-bottom: 26px;
 }
 .contact-links {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 15px;
     margin-bottom: 34px;
 }

@@ -409,27 +409,14 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
 
   console.log("[strapdown.js] [INFO] Parser and lexer well imported. Origin = " + origin + "\n Theme = " + theme);
 
-  // Stylesheets (around 128164 bytes in total, 128 Ko)
-  var linkEl = document.createElement('link');
-  linkEl.rel = 'stylesheet';
-  linkEl.href = originBase + '/themes/'+theme+'.min.css';
-  document.head.appendChild(linkEl);
-
-  var linkEl = document.createElement('link');
-  linkEl.rel = 'stylesheet';
-  linkEl.href = originBase + '/strapdown.min.css';
-  document.head.appendChild(linkEl);
-
-  var linkEl = document.createElement('link');
-  linkEl.rel = 'stylesheet';
-  linkEl.href = originBase + '/themes/bootstrap-responsive.min.css';
-  document.head.appendChild(linkEl);
-
-  // Favicon (730 bytes for 'favicon.png')
-  var linkEl = document.createElement('link');
-  linkEl.rel = 'shortcut icon';
-  linkEl.href = originBase + '/favicon.png';
-  document.head.appendChild(linkEl);
+  // Stylesheet + favicon injection removed.
+  //
+  // Upstream injects themes/<theme>.min.css, strapdown.min.css,
+  // themes/bootstrap-responsive.min.css and favicon.png relative to this
+  // script. None of those exist in this repo, so every page was making four
+  // requests that 404'd -- and the favicon link overrode the one declared in
+  // the page head. Styling comes from ps70-style.css; the favicon is declared
+  // per page. Nothing here is needed.
 
   //////////////////////////////////////////////////////////////////////
   //

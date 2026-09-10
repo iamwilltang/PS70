@@ -4,113 +4,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PS70: Intro to Digital Fabrication</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Digital Fabrication | William Tang</title>
+<link rel="icon" href="./assets/img/favicon.png" type="image/png">
 <link href="./ps70-style.css" rel="stylesheet">
-</head><body>
+</head>
 
-<nav class="navbar navbar-expand-sm navbar-dark">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="flexrow">
-      <h2 class="nav-title">PS70 Spring 2026</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="./index.html">Website Home</a></h4>
-      <h4><a class="nav-link" href="./ps70.html">PS70 Home</a></h4>
-      <h4><a class="nav-link" href="./13_finalproject/index.html">Final Project</a></h4>
-    </div>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-logo" href="./index.html">William</a>
+    <ul class="site-menu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./ps70.html" class="is-current">Fabrication</a></li>
+      <li><a href="./13_finalproject/index.html">Final Project</a></li>
+    </ul>
   </div>
 </nav>
 
-<xmp style="display:none;">
+<div class="week-index">
 
-<div class="container-fluid bg-3 text-center">
-
-  <div class="row">
-    <div class="col-sm-4 week-tile">
-      <a href="./01_intro/index.html">
-        <img style="width: 75%" src="./01_intro/week1-placeholder-image.jpg" alt="week 1 placeholder">
-        <span class="week-tile-label">Week 1: Intro</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./02_2Ddesign/index.html">
-        <img style="width: 75%" src="./02_2Ddesign/week2-placeholder-image.jpg" alt="week 2 placeholder">
-        <span class="week-tile-label">Week 2: 2D Design</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./03_fabrication/index.html">
-        <img style="width: 75%" src="./03_fabrication/week3-placeholder-image.jpg" alt="week 3 placeholder">
-        <span class="week-tile-label">Week 3: Fabrication</span>
-      </a>
-    </div>
+  <div class="week-intro">
+    <h1>Digital Fabrication</h1>
+    <p>A semester of Harvard PS70, documented week by week — laser cutting, CNC milling, 3D design, microcontrollers, circuits, and networking, ending in three autonomous robots that chase each other over radio signal strength alone. Each entry covers what I built, what broke, and what I changed.</p>
   </div>
 
-  <div class="row">
-    <div class="col-sm-4 week-tile">
-      <a href="./04_microcontroller/index.html">
-        <img style="width: 75%" src="./04_microcontroller/week4-placeholder-image.jpg" alt="week 4 placeholder">
-        <span class="week-tile-label">Week 4: Programming</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./05_3Ddesign/index.html">
-        <img style="width: 75%" src="./05_3Ddesign/week5-placeholder-image.jpg" alt="week 5 placeholder">
-        <span class="week-tile-label">Week 5: 3D Design</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./06_inputs/index.html">
-        <img style="width: 75%" src="./06_inputs/week6-placeholder-image.jpg" alt="week 6 placeholder">
-        <span class="week-tile-label">Week 6: Inputs</span>
-      </a>
-    </div>
-  </div>
+  <div class="week-grid">
 
-  <div class="row">
-    <div class="col-sm-4 week-tile">
-      <a href="./07_outputs/index.html">
-        <img style="width: 75%" src="./07_outputs/week7-placeholder-image.jpg" alt="week 7 placeholder">
-        <span class="week-tile-label">Week 7: Outputs</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./08_cnc/index.html">
-        <img style="width: 75%" src="./08_cnc/week8-placeholder-image.jpg" alt="week 8 placeholder">
-        <span class="week-tile-label">Week 8: CNC</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./09_networking/index.html">
-        <img style="width: 75%" src="./09_networking/week9-placeholder-image.jpg" alt="week 9 placeholder">
-        <span class="week-tile-label">Week 9: Networking</span>
-      </a>
-    </div>
-  </div>
+    <a class="week-tile" href="./01_intro/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week01.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 1</span>
+        <span class="week-tile-label">Final project proposal</span>
+      </span>
+    </a>
 
-  <div class="row">
-    <div class="col-sm-4 week-tile">
-      <a href="./10_machine/index.html">
-        <img style="width: 75%" src="./10_machine/machine-placeholder-image.jpg" alt="machine building placeholder">
-        <span class="week-tile-label">Week 10: Machine Building</span>
-      </a>
-    </div>
-    <div class="col-sm-4 week-tile">
-      <a href="./13_finalproject/index.html">
-        <img style="width: 75%" src="./13_finalproject/final-project-placeholder-image.jpg" alt="final project placeholder">
-        <span class="week-tile-label">Week 13: Final Project</span>
-      </a>
-    </div>
-  </div>
+    <a class="week-tile" href="./02_2Ddesign/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week02.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 2</span>
+        <span class="week-tile-label">2D design &amp; 3D modeling</span>
+      </span>
+    </a>
 
+    <a class="week-tile" href="./03_fabrication/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week03.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 3</span>
+        <span class="week-tile-label">Hand tools and fabrication</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./04_microcontroller/index.html">
+      <span class="week-tile-media"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 4</span>
+        <span class="week-tile-label">Microcontroller programming</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./05_3Ddesign/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week05.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 5</span>
+        <span class="week-tile-label">3D design &amp; printing</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./06_inputs/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week06.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 6</span>
+        <span class="week-tile-label">Electronic inputs</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./07_outputs/index.html">
+      <span class="week-tile-media"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 7</span>
+        <span class="week-tile-label">Electronic outputs</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./08_cnc/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week08.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 8</span>
+        <span class="week-tile-label">CNC milling</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./09_networking/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week09.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Week 9</span>
+        <span class="week-tile-label">Radio, WiFi &amp; Bluetooth</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./10_machine/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/week10.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Weeks 10&ndash;12</span>
+        <span class="week-tile-label">Machine building &mdash; tic-tac-toe drawing machine</span>
+      </span>
+    </a>
+
+    <a class="week-tile" href="./13_finalproject/index.html">
+      <span class="week-tile-media" style="background-image: url(assets/img/ps70-thumbs/final.jpg);"></span>
+      <span class="week-tile-body">
+        <span class="week-tile-num">Final project</span>
+        <span class="week-tile-label">Three robots that chase each other by radio alone</span>
+      </span>
+    </a>
+
+  </div>
 </div>
 
-</xmp>
-
-<script src="./strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
