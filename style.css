@@ -715,12 +715,15 @@ h3.project-title {
     margin-bottom: 0;
 }
  /* The personal note lives in About; reset the centring it used in Contact. */
+ /* Same size and leading as the bio above it -- at 15px/#888 it read as a
+    different typeface rather than a second paragraph. */
 .about-body .personal-line {
     max-width: none;
-    margin: 20px 0 0;
+    margin: 22px 0 0;
     text-align: left;
-    font-size: 15px;
-    line-height: 28px;
+    font-size: 17px;
+    line-height: 32px;
+    color: #555;
 }
 .about-body .tools-line {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

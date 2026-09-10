@@ -430,31 +430,13 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   newNode.id = 'content';
   document.body.replaceChild(newNode, markdownEl);
 
-  // Insert navbar if there's none // FIXME be sure THIS is good.
-  var newNode = document.createElement('div');
-  newNode.className = 'navbar navbar-fixed-top';
-  if (!navbarEl && titleEl) {
-    newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> '
-	    + '<div id="headline-copyrights" class="brand">'
-        // + '<a href="https://docs.google.com/forms/d/e/1FAIpQLSd5NfvJBcjNiQoaGDW2io12W1BX7VzB2_3cie9P1O8eUxjLdw/viewform">Application</a> -->
-        + '<a href="../people.html">People</a> '
-        + '<a href="../about.html">About</a>'
-	    //+ '<a title="http://lbo.k.vu/md" href="http://lbesson.bitbucket.org/md/index.html?src=strapdown.js">StrapDown.js</a> v0.6, '
-	    //+ 'theme <a title="More information on this theme on bootswatch.com!" href="http://bootswatch.com/'+theme+'">'+theme+'</a>, '
-	    //+ 'thanks to <a href="https://bitbucket.org/">BitBucket</a>)</div> '
-	    //+ '<div id="headline-squirt" class="brand"> <a title="Quick reader script! Check http://lbesson.bitbucket.org/squirt/ for more details" '
-	    //+ 'href="javascript:(function(){sq=window.sq;if(sq&&sq.closed){window.sq.closed&&window.document.dispatchEvent(new Event(\'squirt.again\'));}else{sq=window.sq||{};sq.version=\'0.4\';sq.host=\'http://lbesson.bitbucket.org/squirt\';sq.j=document.createElement(\'script\');sq.j.src=sq.host+\'/squirt.js?src=strapdown.js\';document.body.appendChild(sq.j);}})();" '
-	    //+ '>SquirtFR?</a>'
-        // var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/x-mathjax-config\'; scriptElMathJax.innerHTML = \'MathJax.Hub.Config({ tex2jax: { inlineMath: [[\\\'$\\\',\\\'$\\\']], displayMath: [ [\\\'$$\\\',\\\'$$\\\'] ], processEscapes: false } });\'; document.body.appendChild(scriptElMathJax);
-        //+ ' <a title="Import MathJax?" href="javascript:(function(){ var scriptElMathJax = document.createElement(\'script\'); scriptElMathJax.type = \'text/javascript\'; scriptElMathJax.src = \'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&amp;locale=fr\'; document.head.appendChild(scriptElMathJax); })();" >MathJax?</a>'
-        //+ ' <a title="Fetch a beacon image?" href="javascript:(function(){ var linkEl = document.createElement(\'img\'); linkEl.alt = \'GA|Analytics\'; linkEl.style = \'visibility: hidden; display: none;\'; linkEl.src = \'http://perso.crans.org/besson/beacon/14/navbar/strapdown.js?pixel\'; document.body.appendChild(linkEl); })();">Beacon?</a>' // https://ga-beacon.appspot.com/UA-38514290-14/
-        + '</div> </div> </div>';
-    document.body.insertBefore(newNode, document.body.firstChild);
-    var title = titleEl.innerHTML;
-    var headlineEl = document.getElementById('headline');
-    if (headlineEl)
-      headlineEl.innerHTML = title;
-  }
+  // Navbar injection removed.
+  //
+  // Upstream builds its own fixed-top navbar whenever it finds no element with
+  // class "navbar" -- containing the page <title> plus hardcoded links to
+  // ../people.html and ../about.html from the upstream project's own site.
+  // Our header uses class "site-nav", so that kicked in and rendered a stray
+  // unstyled title + "People About" above every write-up. We supply the nav.
 
   //////////////////////////////////////////////////////////////////////
   //
