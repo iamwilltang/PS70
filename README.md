@@ -1,6 +1,6 @@
 # William Tang — personal website
 
-Live at <https://iamwilltang.github.io/PS70/>
+Live at <https://williamxtang.com/>
 
 ## Layout
 
